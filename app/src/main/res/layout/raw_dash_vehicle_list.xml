@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:layout_marginBottom="@dimen/_6sdp"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardCornerRadius="@dimen/_14sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/raw_dash_vehicle_list_img_main"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_160sdp"
+                android:src="@drawable/image_1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/_12sdp"
+                android:src="@drawable/whishlist_button" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:background="@drawable/bg_vehicle_list"
+                android:layout_below="@+id/raw_dash_vehicle_list_img_main">
+
+                <TextView
+                    android:id="@+id/raw_dash_vehicle_list_txt_name"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/color_dark_blue_green"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold"
+                    android:text="White Travel Trailers 2018 - Delivery Availa... "
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/raw_dash_vehicle_list_txt_price"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/color_dark_blue_green"
+                    android:textSize="@dimen/_13sdp"
+                    android:layout_below="@+id/raw_dash_vehicle_list_txt_name"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:text="US $125"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_below="@+id/raw_dash_vehicle_list_txt_name"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:text="per day"
+                    android:textSize="@dimen/_13sdp"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_toEndOf="@+id/raw_dash_vehicle_list_txt_price"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatRatingBar
+                    android:layout_width="wrap_content"
+                    android:rating="3"
+                    android:layout_toStartOf="@+id/raw_dash_vehicle_list_txt_rating"
+                    android:layout_marginTop="@dimen/_11sdp"
+                    android:progressDrawable="@drawable/vehicle_rating_bar_full"
+                    android:layout_below="@+id/raw_dash_vehicle_list_txt_name"
+                    android:layout_height="@dimen/_25sdp"/>
+
+                <TextView
+                    android:id="@+id/raw_dash_vehicle_list_txt_rating"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/color_dark_blue_green"
+                    android:textSize="@dimen/_13sdp"
+                    android:layout_below="@+id/raw_dash_vehicle_list_txt_name"
+                    android:layout_alignParentEnd="true"
+                    android:textStyle="bold"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:text="3 "
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

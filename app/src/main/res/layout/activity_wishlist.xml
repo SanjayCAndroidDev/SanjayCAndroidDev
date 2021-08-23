@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/activity_wishlist_relative_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_24sdp"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:layout_marginEnd="@dimen/_12sdp">
+
+            <TextView
+                android:id="@+id/activity_wishlist_txt_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_back"
+                android:drawablePadding="@dimen/_12sdp"
+                android:drawableTint="@color/color_dark_blue_green"
+                android:text="BACK"
+                android:textColor="@color/color_dark_blue_green"
+                android:textSize="@dimen/_14sdp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/activity_wishlist_relative_no_message"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/activity_wishlist_relative_header"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="In Progress"
+                android:textStyle="bold"
+                android:textSize="@dimen/_20sdp"
+                android:layout_centerInParent="true"
+                android:layout_height="wrap_content"/>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</layout>

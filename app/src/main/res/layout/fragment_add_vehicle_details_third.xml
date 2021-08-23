@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:text="Let's set some rules"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Your roof, your rules. Turn on all that apply to your listing."
+                android:textSize="@dimen/_14sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Allow Pets"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_third_switch_allow_pets"
+                    android:text="Allow pets while booking RV by user."
+                    android:textSize="@dimen/_14sdp" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/fragment_add_vehicle_detail_third_switch_allow_pets"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/_12sdp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Allow Tailgating"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_third_switch_allow_tailgating"
+                    android:text="Allow Tailgating while booking RV by user."
+                    android:textSize="@dimen/_14sdp" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/fragment_add_vehicle_detail_third_switch_allow_tailgating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/_12sdp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Allow Festivals"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_third_switch_allow_festivals"
+                    android:text="Allow Festivals celebration while booking RV by user."
+                    android:textSize="@dimen/_14sdp" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/fragment_add_vehicle_detail_third_switch_allow_festivals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/_12sdp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Allow Smoking"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_third_switch_allow_smoking"
+                    android:text="Allow Smoking while booking RV by user."
+                    android:textSize="@dimen/_14sdp" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/fragment_add_vehicle_detail_third_switch_allow_smoking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/_12sdp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Listing address"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Enter the location where renters will pick up your vehicle."
+                android:textSize="@dimen/_14sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:text="Country"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/bg_spinner_add_vehicle_details">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:tint="@color/color_red_orange"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:src="@drawable/ic_arrow_white_down" />
+
+                <Spinner
+                    android:id="@+id/fragment_add_vehicle_detail_third_spinner_country"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:text="Street"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/fragment_add_vehicle_detail_third_edit_street"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:padding="@dimen/_8sdp"
+                android:hint="Enter street name"
+                android:textSize="@dimen/_14sdp"
+                android:background="@drawable/bg_spinner_add_vehicle_details"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:text="Address 2"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/fragment_add_vehicle_detail_third_edit_address_2"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:padding="@dimen/_8sdp"
+                android:hint="Enter street name"
+                android:textSize="@dimen/_14sdp"
+                android:background="@drawable/bg_spinner_add_vehicle_details"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:text="City"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/bg_spinner_add_vehicle_details">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:tint="@color/color_red_orange"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:src="@drawable/ic_arrow_white_down" />
+
+                <Spinner
+                    android:id="@+id/fragment_add_vehicle_detail_third_spinner_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:text="State"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/bg_spinner_add_vehicle_details">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:tint="@color/color_red_orange"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:src="@drawable/ic_arrow_white_down" />
+
+                <Spinner
+                    android:id="@+id/fragment_add_vehicle_detail_third_spinner_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:text="Zip Code"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/fragment_add_vehicle_detail_third_edit_zipcode"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:padding="@dimen/_8sdp"
+                android:hint="Enter zip"
+                android:textSize="@dimen/_14sdp"
+                android:background="@drawable/bg_spinner_add_vehicle_details"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Describe your rig"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Do you have modern hardwoods or 1970s shag? Are you near any popular destinations? Do you include any extras like camping kits or hot cocoa? Use this space to make your rig stand out!"
+                android:textSize="@dimen/_14sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:text="Listing description"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/fragment_add_vehicle_detail_third_edit_listing_desc"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:padding="@dimen/_8sdp"
+                android:minLines="6"
+                android:maxLines="6"
+                android:hint="Enter here"
+                android:textSize="@dimen/_14sdp"
+                android:background="@drawable/bg_spinner_add_vehicle_details"
+                android:layout_height="wrap_content"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Must be 20-2000 characters"
+                    android:textSize="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_4sdp"/>
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_third_txt_listing_desc_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 / 2000 character"
+                    android:layout_alignParentEnd="true"
+                    android:textSize="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_4sdp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Additional info (optional)"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Use the fields below to share more details about your listing."
+                android:textSize="@dimen/_14sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="What’s included?"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Let renters know what comes with your rig\n(i.e. fresh linens, camping chairs, etc.)"
+                android:textSize="@dimen/_14sdp" />
+
+            <EditText
+                android:id="@+id/fragment_add_vehicle_detail_third_edit_whats_include"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:padding="@dimen/_8sdp"
+                android:minLines="6"
+                android:maxLines="6"
+                android:hint="Enter here"
+                android:textSize="@dimen/_14sdp"
+                android:background="@drawable/bg_spinner_add_vehicle_details"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Recommendations"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="What would you recommend for renters to do? Where have you taken your rig?"
+                android:textSize="@dimen/_14sdp" />
+
+            <EditText
+                android:id="@+id/fragment_add_vehicle_detail_third_edit_recommendations"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:padding="@dimen/_8sdp"
+                android:minLines="6"
+                android:maxLines="6"
+                android:hint="Enter here"
+                android:textSize="@dimen/_14sdp"
+                android:background="@drawable/bg_spinner_add_vehicle_details"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Other things to note"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Anything else renters need to know? This is a good place to reiterate any rules."
+                android:textSize="@dimen/_14sdp" />
+
+            <EditText
+                android:id="@+id/fragment_add_vehicle_detail_third_edit_other_things_note"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:padding="@dimen/_8sdp"
+                android:minLines="6"
+                android:maxLines="6"
+                android:hint="Enter here"
+                android:textSize="@dimen/_14sdp"
+                android:background="@drawable/bg_spinner_add_vehicle_details"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/fragment_add_vehicle_detail_third_txt_continue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:background="@drawable/btn_add_vehicle"
+                android:drawableEnd="@drawable/ic_arrow_white_next"
+                android:padding="@dimen/_10sdp"
+                android:paddingStart="@dimen/_16sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:text="CONTINUE"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

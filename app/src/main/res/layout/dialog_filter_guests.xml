@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_280sdp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_background_default_popup"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/_10sdp"
+    android:paddingTop="@dimen/_16sdp"
+    android:paddingEnd="@dimen/_10sdp"
+    android:paddingBottom="@dimen/_16sdp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Guests"
+        android:textColor="@color/color_dark_blue_green"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/color_dark_blue_green"
+            android:text="Guests (min)"
+            android:textSize="@dimen/_16sdp" />
+
+        <TextView
+            android:id="@+id/dialog_filter_guests_txt_minus_guests"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/dialog_filter_guests_txt_guests"
+            android:background="@drawable/bg_txt_add_vehicle_details"
+            android:paddingStart="@dimen/_14sdp"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_14sdp"
+            android:paddingBottom="@dimen/_3sdp"
+            android:text="-"
+            android:textColor="@color/color_red_orange"
+            android:textSize="@dimen/_20sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dialog_filter_guests_txt_guests"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/_8sdp"
+            android:layout_toStartOf="@+id/dialog_filter_guests_txt_plus_guests"
+            android:text="14"
+            android:textSize="@dimen/_14sdp" />
+
+        <TextView
+            android:id="@+id/dialog_filter_guests_txt_plus_guests"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/bg_txt_add_vehicle_details"
+            android:paddingStart="@dimen/_11sdp"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_11sdp"
+            android:paddingBottom="@dimen/_3sdp"
+            android:text="+"
+            android:textColor="@color/color_red_orange"
+            android:textSize="@dimen/_20sdp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Passenger (min)"
+            android:textColor="@color/color_dark_blue_green"
+            android:textSize="@dimen/_16sdp" />
+
+        <TextView
+            android:id="@+id/dialog_filter_guests_txt_minus_passenger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/dialog_filter_guests_txt_passenger"
+            android:background="@drawable/bg_txt_add_vehicle_details"
+            android:paddingStart="@dimen/_14sdp"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_14sdp"
+            android:paddingBottom="@dimen/_3sdp"
+            android:text="-"
+            android:textColor="@color/color_red_orange"
+            android:textSize="@dimen/_20sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dialog_filter_guests_txt_passenger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/_8sdp"
+            android:layout_toStartOf="@+id/dialog_filter_guests_txt_plus_passenger"
+            android:text="14"
+            android:textSize="@dimen/_14sdp" />
+
+        <TextView
+            android:id="@+id/dialog_filter_guests_txt_plus_passenger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/bg_txt_add_vehicle_details"
+            android:paddingStart="@dimen/_11sdp"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_11sdp"
+            android:paddingBottom="@dimen/_3sdp"
+            android:text="+"
+            android:textColor="@color/color_red_orange"
+            android:textSize="@dimen/_20sdp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/dialog_filter_guests_txt_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_6sdp"
+            android:layout_weight="1"
+            android:background="@drawable/bd_orage_line_small"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:text="CANCEL"
+            android:textColor="@color/color_red_orange"
+            android:textSize="@dimen/_14sdp" />
+
+        <TextView
+            android:id="@+id/dialog_filter_guests_txt_apply"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_add_vehicle"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:text="APPLY"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>

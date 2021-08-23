@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/_4sdp"
+    android:layout_marginStart="@dimen/_4sdp"
+    android:background="@android:color/transparent">
+
+    <ImageView
+        android:id="@+id/raw_payment_method_list_img_check"
+        android:layout_width="wrap_content"
+        android:src="@drawable/check"
+        android:padding="@dimen/_6sdp"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/raw_payment_method_list_img_card"
+        android:layout_width="wrap_content"
+        android:src="@drawable/card"
+        android:layout_toEndOf="@+id/raw_payment_method_list_img_check"
+        android:padding="@dimen/_6sdp"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/raw_payment_method_list_img_card"
+        android:layout_toStartOf="@+id/raw_payment_method_list_img_type"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/raw_payment_method_list_txt_card_no"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/_13sdp"
+            android:text="XXXX XXXXX XXXX 2122"
+            android:textColor="@color/color_dark_blue_green"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/raw_payment_method_list_txt_card_date"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/_13sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:text="12/20222"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/raw_payment_method_list_img_type"
+        android:layout_width="wrap_content"
+        android:src="@drawable/mastercard"
+        android:layout_alignParentEnd="true"
+        android:padding="@dimen/_5sdp"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

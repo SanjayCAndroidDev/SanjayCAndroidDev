@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">Jesvardo</string>
+
+    <string name="facebook_app_id">1483380235194137</string>
+    <string name="fb_login_protocol_scheme">fb1483380235194137</string>
+
+    <!--Account for Map Credentials-->
+    <!--Email : developeroneclick@gmail.com-->
+    <!--Password : Oneclick1@-->
+    <string name="google_maps_key">AIzaSyCnOodWZpxpXypq-lUW5PqhU4FBF53CAo0</string>
+
+    <string name="text_global_gps_status_enabled">"GPS is Enabled"</string>
+    <string name="text_global_gps_status_disabled">"GPS is Disabled"</string>
+
+    <!--General Strings-->
+    <string name="internet_error">Please check your internet connection and try again later.</string>
+    <string name="general_error">Oops Something went wrong, we will fix it soon...</string>
+    <string name="text_exit_title">Exit</string>
+    <string name="text_exit_information">Are you sure want to exit?</string>
+    <string name="text_logout_title">Logout</string>
+    <string name="text_logout_information">Are you sure want to logout?</string>
+    <string name="text_yes">Yes</string>
+    <string name="text_delete">Delete</string>
+    <string name="text_no">No</string>
+    <string name="text_cancel">Cancel</string>
+    <string name="text_ok">OK</string>
+    <string name="text_time_out_msg">Connection Time Out!!!</string>
+    <string name="text_server_error_msg">Server Connection Error!!!</string>
+    <string name="text_already_login_with_other_device">You have an active login with other device. Do you wish to re-login with this device?</string>
+    <string name="text_delete_confirmation">Are you sure you want to delete?</string>
+    <string name="text_concat_strings">%1$s %2$s</string>
+    <string name="text_copyright">Copyright © 2020 Jesvardo LLC</string>
+
+    <!--Login Screen-->
+    <string name="text_login_welcome_to_vyzeo">Welcome to Jesvardo</string>
+    <string name="text_login_login_to_continue">Please log in to continue</string>
+    <string name="text_login_email_hint">Email</string>
+    <string name="text_login_password_hint">Password</string>
+    <string name="text_login_empty_email">Please enter email address.</string>
+    <string name="text_login_empty_phone">Please enter phone number.</string>
+    <string name="text_login_empty_first_name">Please enter first name.</string>
+    <string name="text_login_empty_last_name">Please enter last name.</string>
+    <string name="text_login_invalid_email">Please enter valid email address.</string>
+    <string name="text_login_invalid_phone">Please enter valid phone number.</string>
+    <string name="text_login_empty_password">Please enter your password.</string>
+    <string name="text_login_forget_password">Forgot Password ?</string>
+    <string name="text_login_button">Log In</string>
+
+    <!--Forgot Password-->
+    <string name="text_forgot_password_header">Recover your Password</string>
+    <string name="text_forgot_password_sub_header">Please enter your E-mail</string>
+    <string name="text_forgot_password_email_hint">Email</string>
+    <string name="text_forgot_password_details">We will send an E-mail containing a\nlink to reset your password.</string>
+    <string name="text_forgot_password_empty_email">Please enter email address</string>
+    <string name="text_forgot_password_invalid_email">Please enter valid email address</string>
+    <string name="text_forgot_password_send">Send</string>
+
+    <!--Navigation Title-->
+    <string name="text_nav_title_home">Home</string>
+    <string name="text_nav_title_contacts">Contacts</string>
+    <string name="text_nav_title_calls">Calls</string>
+    <string name="text_nav_title_logout">Logout</string>
+
+    <!--Screen Titles-->
+    <string name="text_title_dashboard">Dashboard</string>
+    <string name="text_title_call_request">Request</string>
+    <string name="text_title_profile">Profile</string>
+    <string name="text_title_my_addresses">My Addresses</string>
+    <string name="text_title_payment_method">Payment Method</string>
+    <string name="text_title_help_center">Help Center</string>
+    <string name="text_title_notifications">Notifications</string>
+
+    <string name="text_title_my_trips">My trips</string>
+    <string name="text_title_my_trips_details">Trip Details</string>
+
+</resources>

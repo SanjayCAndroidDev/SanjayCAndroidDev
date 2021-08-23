@@ -1,0 +1,1051 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fragment_add_vehicle_detail_second_txt_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:text="Interior Space"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/fragment_add_vehicle_detail_second_txt_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="How many people does your rig sleep, and seat?"
+                android:textSize="@dimen/_13sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Overnight guests"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Number of Sleeper seats"
+                    android:textSize="@dimen/_13sdp" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_minus_sleeper_seat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_second_txt_sleeper_seat"
+                    android:background="@drawable/bg_txt_add_vehicle_details"
+                    android:paddingStart="@dimen/_14sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_14sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="-"
+                    android:textColor="@color/color_red_orange"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_sleeper_seat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_second_txt_add_sleeper_seat"
+                    android:text="14"
+                    android:textSize="@dimen/_14sdp" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_add_sleeper_seat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/bg_txt_add_vehicle_details"
+                    android:paddingStart="@dimen/_11sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_11sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="+"
+                    android:textColor="@color/color_red_orange"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Passengers"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Number of seats with seatbelts"
+                    android:textSize="@dimen/_13sdp" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_minus_passenger"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_second_txt_passenger"
+                    android:background="@drawable/bg_txt_add_vehicle_details"
+                    android:paddingStart="@dimen/_14sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_14sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="-"
+                    android:textColor="@color/color_red_orange"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_passenger"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_second_txt_add_passenger"
+                    android:text="14"
+                    android:textSize="@dimen/_14sdp" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_add_passenger"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/bg_txt_add_vehicle_details"
+                    android:paddingStart="@dimen/_11sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_11sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="+"
+                    android:textColor="@color/color_red_orange"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:text="Sleeping details"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="How many beds does your rig have?"
+                android:textSize="@dimen/_13sdp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="King"
+                    android:textSize="@dimen/_13sdp" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_minus_king"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_second_txt_king"
+                    android:background="@drawable/bg_txt_add_vehicle_details"
+                    android:paddingStart="@dimen/_14sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_14sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="-"
+                    android:textColor="@color/color_red_orange"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_king"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_second_txt_add_king"
+                    android:text="14"
+                    android:textSize="@dimen/_14sdp" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_add_king"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/bg_txt_add_vehicle_details"
+                    android:paddingStart="@dimen/_11sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_11sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="+"
+                    android:textColor="@color/color_red_orange"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Queen"
+                    android:textSize="@dimen/_13sdp" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_minus_queen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_second_txt_queen"
+                    android:background="@drawable/bg_txt_add_vehicle_details"
+                    android:paddingStart="@dimen/_14sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_14sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="-"
+                    android:textColor="@color/color_red_orange"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_queen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_second_txt_add_queen"
+                    android:text="14"
+                    android:textSize="@dimen/_14sdp" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_add_queen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/bg_txt_add_vehicle_details"
+                    android:paddingStart="@dimen/_11sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_11sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="+"
+                    android:textColor="@color/color_red_orange"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Twin"
+                    android:textSize="@dimen/_13sdp" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_minus_twin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_second_txt_twin"
+                    android:background="@drawable/bg_txt_add_vehicle_details"
+                    android:paddingStart="@dimen/_14sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_14sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="-"
+                    android:textColor="@color/color_red_orange"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_twin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_second_txt_add_twin"
+                    android:text="14"
+                    android:textSize="@dimen/_14sdp" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_add_twin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/bg_txt_add_vehicle_details"
+                    android:paddingStart="@dimen/_11sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_11sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="+"
+                    android:textColor="@color/color_red_orange"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Full"
+                    android:textSize="@dimen/_13sdp" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_minus_full"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_second_txt_full"
+                    android:background="@drawable/bg_txt_add_vehicle_details"
+                    android:paddingStart="@dimen/_14sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_14sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="-"
+                    android:textColor="@color/color_red_orange"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_full"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_second_txt_add_full"
+                    android:text="14"
+                    android:textSize="@dimen/_14sdp" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_add_full"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/bg_txt_add_vehicle_details"
+                    android:paddingStart="@dimen/_11sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_11sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="+"
+                    android:textColor="@color/color_red_orange"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Dinette conversion"
+                    android:textSize="@dimen/_13sdp" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_minus_dinette"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_second_txt_dinette"
+                    android:background="@drawable/bg_txt_add_vehicle_details"
+                    android:paddingStart="@dimen/_14sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_14sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="-"
+                    android:textColor="@color/color_red_orange"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_dinette"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_second_txt_add_dinette"
+                    android:text="14"
+                    android:textSize="@dimen/_14sdp" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_add_dinette"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/bg_txt_add_vehicle_details"
+                    android:paddingStart="@dimen/_11sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_11sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="+"
+                    android:textColor="@color/color_red_orange"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Bunk bed"
+                    android:textSize="@dimen/_13sdp" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_minus_bunk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_second_txt_bunk"
+                    android:background="@drawable/bg_txt_add_vehicle_details"
+                    android:paddingStart="@dimen/_14sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_14sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="-"
+                    android:textColor="@color/color_red_orange"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_bunk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_second_txt_add_bunk"
+                    android:text="14"
+                    android:textSize="@dimen/_14sdp" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_add_bunk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/bg_txt_add_vehicle_details"
+                    android:paddingStart="@dimen/_11sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_11sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="+"
+                    android:textColor="@color/color_red_orange"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Fold-out sofa"
+                    android:textSize="@dimen/_13sdp" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_minus_fold_sofa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_second_txt_fold_sofa"
+                    android:background="@drawable/bg_txt_add_vehicle_details"
+                    android:paddingStart="@dimen/_14sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_14sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="-"
+                    android:textColor="@color/color_red_orange"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_fold_sofa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_second_txt_add_fold_sofa"
+                    android:text="14"
+                    android:textSize="@dimen/_14sdp" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_add_fold_sofa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/bg_txt_add_vehicle_details"
+                    android:paddingStart="@dimen/_11sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_11sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="+"
+                    android:textColor="@color/color_red_orange"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Other"
+                    android:textSize="@dimen/_13sdp" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_minus_fold_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_second_txt_other"
+                    android:background="@drawable/bg_txt_add_vehicle_details"
+                    android:paddingStart="@dimen/_14sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_14sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="-"
+                    android:textColor="@color/color_red_orange"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_second_txt_add_other"
+                    android:text="14"
+                    android:textSize="@dimen/_14sdp" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_second_txt_add_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/bg_txt_add_vehicle_details"
+                    android:paddingStart="@dimen/_11sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_11sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="+"
+                    android:textColor="@color/color_red_orange"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:text="Amenities"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="What extras are included with your rig?\nCheck all that apply."
+                android:textSize="@dimen/_13sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:text="Cooking"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Refrigerator"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Microwave"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Stove/range"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Ovan"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Kitchen sink"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Dining Table"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:text="Bathroom"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:text="Inside shower"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:paddingStart="@dimen/_4sdp"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:text="Outside shower"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingStart="@dimen/_4sdp"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:text="Toilet"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingStart="@dimen/_4sdp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:text="Temperature"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:text="Air Conditioning"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:paddingStart="@dimen/_4sdp"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:text="Heater"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingStart="@dimen/_4sdp"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:text="Ceiling Fan"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingStart="@dimen/_4sdp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:text="Hookups"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:text="Water hookup"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:paddingStart="@dimen/_4sdp"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:text="Electric hookup"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingStart="@dimen/_4sdp"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:text="Sewer hookup"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingStart="@dimen/_4sdp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:text="Other"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Generator"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="TV/ DVD"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Backup camera"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="WIFI"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Leveling Jack"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Satellite"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Bike Rack"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Radio"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Audio Inputs"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Inverter"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Washer/dryer"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Solar"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Extra Storage"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="CD player"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Handicap accessible "
+                    android:paddingStart="@dimen/_4sdp"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Awning"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/fragment_add_vehicle_detail_second_txt_continue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:background="@drawable/btn_add_vehicle"
+                android:drawableEnd="@drawable/ic_arrow_white_next"
+                android:padding="@dimen/_10sdp"
+                android:paddingStart="@dimen/_16sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:text="CONTINUE"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

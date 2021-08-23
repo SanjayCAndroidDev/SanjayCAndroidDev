@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:text="Add some photos"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Images might be the best way to get a booking. Add quality photos that highlight the best parts of your vehicle."
+                android:textSize="@dimen/_14sdp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_add_photos"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bd_doted_line"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:id="@+id/txt_total_photos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="0"
+                    android:layout_margin="@dimen/_12sdp"
+                    android:textColor="@color/color_dark_blue_green"
+                    android:textSize="@dimen/_16sdp" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_forth_txt_add_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="+"
+                    android:textColor="@color/color_red_orange"
+                    android:textSize="@dimen/_40sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fragment_add_vehicle_detail_forth_txt_add_photo"
+                    android:layout_centerInParent="true"
+                    android:text="Add Photos"
+                    android:textColor="@color/color_dark_blue_green"
+                    android:textSize="@dimen/_16sdp" />
+
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_forth_txt_view_images"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:padding="@dimen/_8sdp"
+                    android:textColor="@color/color_dark_blue_green"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="View Images"
+                    android:layout_height="wrap_content"/>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Add your mobile number"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="We'll send you booking requests, reminders, and other notifications. This number should be able to receive texts or calls."
+                android:textSize="@dimen/_14sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Mobile Number"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/fragment_add_vehicle_detail_forth_edit_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/bg_spinner_add_vehicle_details"
+                android:hint="Enter mobile no"
+                android:inputType="phone"
+                android:padding="@dimen/_8sdp"
+                android:textSize="@dimen/_14sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Set your price"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="We’ve added our suggested nighty rate for your 2018 Abcor Homes Horizon-Chevrolet in AK below, but feel free to adjust to your preference"
+                android:textSize="@dimen/_14sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Nightly rate"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/bg_spinner_add_vehicle_details">
+
+                <EditText
+                    android:id="@+id/fragment_add_vehicle_detail_forth_edit_night_rate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_forth_view_night_rate"
+                    android:background="@null"
+                    android:inputType="number" />
+
+                <View
+                    android:id="@+id/fragment_add_vehicle_detail_forth_view_night_rate"
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_forth_txt_night_rate"
+                    android:background="@color/color_red_orange" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_forth_txt_night_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:padding="@dimen/_10sdp"
+                    android:text="per night"
+                    android:textSize="@dimen/_14sdp" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Offer a weekly discount?"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:text="Yes" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:text="No" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Offer a monthly discount?"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:text="Yes" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:text="No" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Set your security deposit"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="The security deposit is for any potential damage or added fees and will be returned to renters upon safe return of your rv"
+                android:textSize="@dimen/_14sdp" />
+
+            <EditText
+                android:id="@+id/fragment_add_vehicle_detail_forth_edit_security_deposit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/bg_spinner_add_vehicle_details"
+                android:hint="Enter security_deposit"
+                android:inputType="phone"
+                android:padding="@dimen/_8sdp"
+                android:textSize="@dimen/_14sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Do you want to offer delivery?"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Delivery is a popular tool for owners to expand their rental market. Renters can choose to have their RV delivered to a destination within an agreed distance, and Owners will drop off and pickup the RV for an additional fee."
+                android:textSize="@dimen/_14sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Offer a monthly discount?"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:text="Yes" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:text="No" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="How far are you willing to deliver your RV?"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/bg_spinner_add_vehicle_details">
+
+                <EditText
+                    android:id="@+id/fragment_add_vehicle_detail_forth_edit_mile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_forth_view_mile"
+                    android:background="@null"
+                    android:inputType="number" />
+
+                <View
+                    android:id="@+id/fragment_add_vehicle_detail_forth_view_mile"
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_forth_txt_mile"
+                    android:background="@color/color_red_orange" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_forth_txt_mile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:padding="@dimen/_10sdp"
+                    android:text="miles      "
+                    android:textSize="@dimen/_14sdp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Cost per mile"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/bg_spinner_add_vehicle_details">
+
+                <EditText
+                    android:id="@+id/fragment_add_vehicle_detail_forth_edit_per_mile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_forth_view_per_mile"
+                    android:background="@null"
+                    android:inputType="number" />
+
+                <View
+                    android:id="@+id/fragment_add_vehicle_detail_forth_view_per_mile"
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_forth_txt_per_mile"
+                    android:background="@color/color_red_orange" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_forth_txt_per_mile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:padding="@dimen/_10sdp"
+                    android:text="per miles"
+                    android:textSize="@dimen/_14sdp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Minimum delivery fee"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/fragment_add_vehicle_detail_forth_edit_minimum_fee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/bg_spinner_add_vehicle_details"
+                android:hint="Enter minimum delivery fee"
+                android:inputType="number"
+                android:padding="@dimen/_8sdp"
+                android:textSize="@dimen/_14sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Mileage rates"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="How would you like to set your mileage rates?"
+                android:textSize="@dimen/_14sdp" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_weight="1"
+                android:paddingStart="@dimen/_4sdp"
+                android:text="Allow unlimited miles" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:paddingStart="@dimen/_4sdp"
+                android:text="Set my own rates" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Included miles"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/bg_spinner_add_vehicle_details">
+
+                <EditText
+                    android:id="@+id/fragment_add_vehicle_detail_forth_edit_include_mile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_forth_view_include_mile"
+                    android:background="@null" />
+
+                <View
+                    android:id="@+id/fragment_add_vehicle_detail_forth_view_include_mile"
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_forth_txt_include_mile"
+                    android:background="@color/color_red_orange" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_forth_txt_include_mile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:padding="@dimen/_10sdp"
+                    android:text="per day   "
+                    android:textSize="@dimen/_14sdp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Overage charge"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/bg_spinner_add_vehicle_details">
+
+                <EditText
+                    android:id="@+id/fragment_add_vehicle_detail_forth_edit_overage_charge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_forth_view_overage_charge"
+                    android:background="@null" />
+
+                <View
+                    android:id="@+id/fragment_add_vehicle_detail_forth_view_overage_charge"
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_forth_txt_overage_charge"
+                    android:background="@color/color_red_orange" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_forth_txt_overage_charge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:padding="@dimen/_10sdp"
+                    android:text="per miles"
+                    android:textSize="@dimen/_14sdp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Generator rates"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Does your vehicle include a generator?"
+                android:textSize="@dimen/_14sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:text="No" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:text="Yes" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="How would you like to set your generator rates?"
+                android:textSize="@dimen/_14sdp" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_weight="1"
+                android:paddingStart="@dimen/_4sdp"
+                android:text="Allow unlimited generator usage" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:paddingStart="@dimen/_4sdp"
+                android:text="Set my own rates" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Included miles"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/bg_spinner_add_vehicle_details">
+
+                <EditText
+                    android:id="@+id/fragment_add_vehicle_detail_forth_edit_generator_include_mile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_forth_view_generator_include_mile"
+                    android:background="@null" />
+
+                <View
+                    android:id="@+id/fragment_add_vehicle_detail_forth_view_generator_include_mile"
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_forth_txt_generator_include_mile"
+                    android:background="@color/color_red_orange" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_forth_txt_generator_include_mile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:padding="@dimen/_10sdp"
+                    android:text="per day   "
+                    android:textSize="@dimen/_14sdp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Overage charge"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/bg_spinner_add_vehicle_details">
+
+                <EditText
+                    android:id="@+id/fragment_add_vehicle_detail_forth_edit_generator_overage_charge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_forth_view_generator_overage_charge"
+                    android:background="@null" />
+
+                <View
+                    android:id="@+id/fragment_add_vehicle_detail_forth_view_generator_overage_charge"
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/fragment_add_vehicle_detail_forth_txt_generator_overage_charge"
+                    android:background="@color/color_red_orange" />
+
+                <TextView
+                    android:id="@+id/fragment_add_vehicle_detail_forth_txt_generator_overage_charge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:padding="@dimen/_10sdp"
+                    android:text="per miles"
+                    android:textSize="@dimen/_14sdp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="We recommend allowing a minimum rental length of 2 nights"
+                android:textColor="@color/color_dark_blue"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/bg_spinner_add_vehicle_details">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:src="@drawable/ic_arrow_white_down"
+                    android:tint="@color/color_red_orange" />
+
+                <Spinner
+                    android:id="@+id/fragment_add_vehicle_detail_forth_spinner_rental_lenght"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/fragment_add_vehicle_detail_forth_txt_continue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:background="@drawable/btn_add_vehicle"
+                android:drawableEnd="@drawable/ic_arrow_white_next"
+                android:padding="@dimen/_10sdp"
+                android:paddingStart="@dimen/_16sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:text="CONTINUE"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/fragment_add_vehicle_detail_first_txt_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:text="Tell us about your RV more"
+            android:textColor="@color/color_dark_blue"
+            android:textSize="@dimen/_18sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/fragment_add_vehicle_detail_first_txt_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fragment_add_vehicle_detail_first_txt_header"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="RV's listed with JesVardo, are routinely sanitised before you hit the road in them. "
+            android:textSize="@dimen/_14sdp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:text="Select Vehicle Type"
+            android:textColor="@color/color_dark_blue"
+            android:textSize="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:textStyle="bold" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/bg_spinner_add_vehicle_details">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:tint="@color/color_red_orange"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:src="@drawable/ic_arrow_white_down" />
+
+            <Spinner
+                android:id="@+id/fragment_add_vehicle_detail_first_spinner_type"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:text="Manufacturer"
+            android:textColor="@color/color_dark_blue"
+            android:textSize="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/bg_spinner_add_vehicle_details">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:tint="@color/color_red_orange"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:src="@drawable/ic_arrow_white_down" />
+
+            <Spinner
+                android:id="@+id/fragment_add_vehicle_detail_first_spinner_manufacturer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:text="Model"
+            android:textColor="@color/color_dark_blue"
+            android:textSize="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:textStyle="bold" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/bg_spinner_add_vehicle_details">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:tint="@color/color_red_orange"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:src="@drawable/ic_arrow_white_down" />
+
+            <Spinner
+                android:id="@+id/fragment_add_vehicle_detail_first_spinner_model"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:text="Year"
+            android:textColor="@color/color_dark_blue"
+            android:textSize="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:textStyle="bold" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/bg_spinner_add_vehicle_details">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:tint="@color/color_red_orange"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:src="@drawable/ic_arrow_white_down" />
+
+            <Spinner
+                android:id="@+id/fragment_add_vehicle_detail_first_spinner_year"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null" />
+
+        </RelativeLayout>
+
+
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:text="Length"
+            android:textColor="@color/color_dark_blue"
+            android:textSize="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:textStyle="bold" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/bg_spinner_add_vehicle_details">
+
+            <EditText
+                android:id="@+id/fragment_add_vehicle_detail_first_edit_length"
+                android:layout_width="match_parent"
+                android:background="@null"
+                android:layout_centerVertical="true"
+                android:inputType="number"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_toStartOf="@+id/fragment_add_vehicle_detail_first_view"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:id="@+id/fragment_add_vehicle_detail_first_view"
+                android:layout_width="@dimen/_1sdp"
+                android:layout_centerVertical="true"
+                android:background="@color/color_red_orange"
+                android:layout_toStartOf="@+id/fragment_add_vehicle_detail_first_txt_ft"
+                android:layout_height="@dimen/_25sdp"/>
+
+            <TextView
+                android:id="@+id/fragment_add_vehicle_detail_first_txt_ft"
+                android:layout_width="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:padding="@dimen/_10sdp"
+                android:textSize="@dimen/_14sdp"
+                android:text="ft"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/fragment_add_vehicle_detail_first_txt_continue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/btn_add_vehicle"
+            android:drawableEnd="@drawable/ic_arrow_white_next"
+            android:padding="@dimen/_10sdp"
+            android:paddingStart="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:paddingEnd="@dimen/_16sdp"
+            android:text="CONTINUE"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

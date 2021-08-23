@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <fragment
+            android:id="@+id/activity_map_vehicle_map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/activity_map_vehicle_img_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_arrow_white_back"
+            android:tint="@color/color_red_orange" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/activity_map_vehicle_card_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/_12sdp"
+            app:cardCornerRadius="@dimen/_12sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_8sdp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/activity_map_vehicle_card_img"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    app:cardCornerRadius="@dimen/_6sdp">
+
+                    <ImageView
+                        android:id="@+id/activity_map_vehicle_img_main"
+                        android:layout_width="match_parent"
+                        android:src="@drawable/motorhomes"
+                        android:scaleType="centerCrop"
+                        android:layout_height="match_parent"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:layout_toEndOf="@+id/activity_map_vehicle_card_img">
+
+                    <TextView
+                        android:id="@+id/activity_map_vehicle_txt_name"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/color_dark_blue_green"
+                        android:textSize="@dimen/_13sdp"
+                        android:textStyle="bold"
+                        android:maxLines="2"
+                        android:text="White Travel Trailers 2018 - Delivery Availa... "
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/activity_map_vehicle_txt_price"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/color_dark_blue_green"
+                        android:textSize="@dimen/_13sdp"
+                        android:layout_below="@+id/activity_map_vehicle_txt_name"
+                        android:textStyle="bold"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:text="US $125"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_below="@+id/activity_map_vehicle_txt_name"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:text="per day"
+                        android:textSize="@dimen/_13sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:layout_toEndOf="@+id/activity_map_vehicle_txt_price"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.appcompat.widget.AppCompatRatingBar
+                        android:id="@+id/activity_map_vehicle_ratingBar"
+                        android:layout_width="wrap_content"
+                        android:rating="3"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="@dimen/_11sdp"
+                        android:progressDrawable="@drawable/vehicle_rating_bar_full"
+                        android:layout_below="@+id/activity_map_vehicle_txt_name"
+                        android:layout_height="@dimen/_25sdp"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</layout>

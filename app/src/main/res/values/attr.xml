@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomTextView">
+        <attr name="font_name">
+            <enum name="regular" value="1" />
+            <enum name="medium" value="2" />
+            <enum name="semibold" value="3" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CalendarView">
+        <attr name="dateFormat" format="string"/>
+    </declare-styleable>
+
+</resources>

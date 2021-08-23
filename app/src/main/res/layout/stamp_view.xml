@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr">
+
+    <RelativeLayout
+        android:id="@+id/li_main_stamp_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/Temp_stamp_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:padding="@dimen/_12sdp">
+
+            <LinearLayout
+                android:id="@+id/li_stamp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_130sdp"
+                android:background="@drawable/rect_grey"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/li_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/li_rightView"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.3"
+                        android:gravity="center_vertical"
+                        android:lineSpacingExtra="2sp"
+                        android:lineSpacingMultiplier="1.2"
+                        android:maxLines="1"
+                        android:shadowColor="@color/white"
+                        android:shadowDx="0.5"
+                        android:shadowDy="0.5"
+                        android:shadowRadius="0.5"
+                        android:text="Surat,Gujarat,India"
+                        android:textColor="@color/white"
+                        app:autoSizePresetSizes="@array/autosize_text_sizes"
+                        app:autoSizeStepGranularity="1sp"
+                        app:autoSizeTextType="uniform" />
+
+                    <TextView
+                        android:id="@+id/tv_address_line_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.7"
+                        android:gravity="center_vertical"
+                        android:lineSpacingExtra="2sp"
+                        android:lineSpacingMultiplier="1.2"
+                        android:shadowColor="@color/white"
+                        android:shadowDx="0.5"
+                        android:shadowDy="0.5"
+                        android:shadowRadius="0.5"
+                        android:text="Surat,Gujarat,India"
+                        android:textColor="@color/white"
+                        app:autoSizePresetSizes="@array/autosize_text_sizes"
+                        app:autoSizeStepGranularity="1sp"
+                        app:autoSizeTextType="uniform" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

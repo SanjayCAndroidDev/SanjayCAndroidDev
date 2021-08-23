@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/activity_info_img_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/top_left_vector" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/top_right_vector" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/activity_info_view_pager"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_minus16sdp"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/activity_info_tab_layout"
+            android:layout_below="@+id/activity_info_img_top" />
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/activity_info_tab_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/activity_info_txt_next"
+            android:layout_centerHorizontal="true"
+            app:tabBackground="@drawable/tab_selector"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp" />
+
+        <TextView
+            android:id="@+id/activity_info_txt_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_24sdp"
+            android:layout_marginEnd="@dimen/_24sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:background="@drawable/bg_btn_login"
+            android:drawableEnd="@drawable/ic_back_right"
+            android:paddingStart="@dimen/_16sdp"
+            android:drawableTint="@color/color_white"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_16sdp"
+            android:paddingBottom="@dimen/_8sdp"
+            android:text="Next"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</layout>

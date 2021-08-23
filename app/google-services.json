@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "150877574980",
+    "project_id": "jesvardo-655ce",
+    "storage_bucket": "jesvardo-655ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:150877574980:android:75ed9ffcf3e715425e2911",
+        "android_client_info": {
+          "package_name": "com.jesvardo.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "150877574980-v029pcsdamfu3np2vpfv48s1ku9hudic.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jesvardo.app",
+            "certificate_hash": "2b50a7fb41d2e32062fa6932798dbe298b96cbc3"
+          }
+        },
+        {
+          "client_id": "150877574980-4eqdhhdka3r73qent0foi5nmgea4202i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-9_DfvinrBDhhbDB4GLsfHkEIcd33wdI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "150877574980-4eqdhhdka3r73qent0foi5nmgea4202i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
