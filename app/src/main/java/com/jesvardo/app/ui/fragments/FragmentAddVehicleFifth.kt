@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.jesvardo.app.R
+import com.jesvardo.app.ui.ActivityAddVehicleConfirm
 import com.jesvardo.app.ui.ActivityAddVehicleDetails
 import com.jesvardo.app.ui.ActivityDashboard
 import com.jesvardo.app.ui.ActivityIntro
@@ -50,9 +51,8 @@ class FragmentAddVehicleFifth : Fragment() {
         textContinue = createdView.findViewById<TextView>(R.id.fragment_add_vehicle_detail_fifth_txt_continue)
 
         textContinue.setSafeOnClickListener {
-            val i = Intent(baseActivity, ActivityDashboard::class.java)
+            val i = Intent(baseActivity, ActivityAddVehicleConfirm::class.java)
             startActivity(i)
-            baseActivity.finishAffinity()
         }
 
         return createdView

@@ -40,6 +40,7 @@
                 android:layout_marginTop="@dimen/_16sdp"
                 android:paddingStart="@dimen/_4sdp"
                 android:text="Flexible policy"
+                android:buttonTint="@color/color_orange"
                 android:textColor="@color/color_dark_blue_green"
                 android:textSize="@dimen/_16sdp"
                 android:textStyle="bold" />
@@ -66,6 +67,7 @@
                 android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_16sdp"
                 android:paddingStart="@dimen/_4sdp"
+                android:buttonTint="@color/color_orange"
                 android:text="Moderate policy"
                 android:textColor="@color/color_dark_blue_green"
                 android:textSize="@dimen/_16sdp"
@@ -93,6 +95,7 @@
                 android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_16sdp"
                 android:paddingStart="@dimen/_4sdp"
+                android:buttonTint="@color/color_orange"
                 android:text="Strict policy"
                 android:textColor="@color/color_dark_blue_green"
                 android:textSize="@dimen/_16sdp"
@@ -140,6 +143,7 @@
                 android:layout_marginTop="@dimen/_16sdp"
                 android:paddingStart="@dimen/_4sdp"
                 android:text="Manual approval"
+                android:buttonTint="@color/color_orange"
                 android:textColor="@color/color_dark_blue_green"
                 android:textSize="@dimen/_16sdp"
                 android:textStyle="bold" />
@@ -159,6 +163,7 @@
                 android:layout_marginTop="@dimen/_16sdp"
                 android:paddingStart="@dimen/_4sdp"
                 android:text="INSTABOOK (recommended)"
+                android:buttonTint="@color/color_orange"
                 android:textColor="@color/color_dark_blue_green"
                 android:textSize="@dimen/_16sdp"
                 android:textStyle="bold" />
@@ -190,7 +195,6 @@
                 android:textSize="@dimen/_14sdp" />
 
 
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40sdp"
@@ -203,9 +207,9 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:tint="@color/color_red_orange"
                     android:layout_marginEnd="@dimen/_16sdp"
-                    android:src="@drawable/ic_arrow_white_down" />
+                    android:src="@drawable/ic_arrow_white_down"
+                    android:tint="@color/color_red_orange" />
 
                 <Spinner
                     android:id="@+id/fragment_add_vehicle_detail_fifth_spinner_notice"
@@ -254,17 +258,17 @@
                 android:textStyle="bold" />
 
 
-
             <EditText
                 android:id="@+id/fragment_add_vehicle_detail_fifth_edit_vin_number"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_6sdp"
-                android:padding="@dimen/_8sdp"
-                android:hint="Enter vin number"
-                android:textSize="@dimen/_14sdp"
                 android:background="@drawable/bg_spinner_add_vehicle_details"
-                android:layout_height="wrap_content"/>
+                android:hint="Enter vin number"
+                android:padding="@dimen/_8sdp"
+                android:inputType="number"
+                android:textSize="@dimen/_14sdp" />
 
 
             <TextView
@@ -289,9 +293,9 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:tint="@color/color_red_orange"
                     android:layout_marginEnd="@dimen/_16sdp"
-                    android:src="@drawable/ic_arrow_white_down" />
+                    android:src="@drawable/ic_arrow_white_down"
+                    android:tint="@color/color_red_orange" />
 
                 <Spinner
                     android:id="@+id/fragment_add_vehicle_detail_fifth_spinner_camper_van"
@@ -300,7 +304,6 @@
                     android:background="@null" />
 
             </RelativeLayout>
-
 
 
             <TextView
@@ -314,17 +317,70 @@
                 android:textStyle="bold" />
 
 
-
             <EditText
                 android:id="@+id/fragment_add_vehicle_detail_fifth_edit_current_mileage"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_6sdp"
-                android:padding="@dimen/_8sdp"
-                android:hint="Enter current mileage"
-                android:textSize="@dimen/_14sdp"
                 android:background="@drawable/bg_spinner_add_vehicle_details"
-                android:layout_height="wrap_content"/>
+                android:hint="Enter current mileage"
+                android:padding="@dimen/_8sdp"
+                android:inputType="number"
+                android:textSize="@dimen/_14sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/bg_spinner_add_vehicle_details"
+                android:gravity="center"
+                android:padding="@dimen/_8sdp"
+                android:text="CREATE ADD ON"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="If your motorhome or trailer has a salvage title, don't worry, you can still list your RV for rent. Howevr, we can't provide insurance for it."
+                android:textSize="@dimen/_14sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:buttonTint="@color/color_orange"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:textColor="@color/color_dark_blue_green"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Delivery is a popular tool for owners to
+expand their rental market. Renters can
+choose to have their RV delivered to a
+destination within an agreed distance, and
+Owners will drop off and pickup the RV for
+an additional fee."
+                    android:textSize="@dimen/_14sdp" />
+
+            </LinearLayout>
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -338,24 +394,26 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:orientation="horizontal"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:layout_height="wrap_content">
+                android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatCheckBox
                     android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Yes"
                     android:paddingStart="@dimen/_4sdp"
-                    android:layout_height="wrap_content"/>
+                    android:buttonTint="@color/color_orange"
+                    android:text="Yes" />
 
                 <androidx.appcompat.widget.AppCompatCheckBox
                     android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="No"
+                    android:buttonTint="@color/color_orange"
                     android:paddingStart="@dimen/_4sdp"
-                    android:layout_height="wrap_content"/>
+                    android:text="No" />
 
             </LinearLayout>
 
@@ -381,7 +439,7 @@
                 android:padding="@dimen/_10sdp"
                 android:paddingStart="@dimen/_16sdp"
                 android:paddingEnd="@dimen/_16sdp"
-                android:text="CONTINUE"
+                android:text="FINISH"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_14sdp"
                 android:textStyle="bold" />

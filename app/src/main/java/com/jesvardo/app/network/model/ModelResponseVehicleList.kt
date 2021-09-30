@@ -4,19 +4,76 @@ import kotlinx.android.parcel.Parcelize
 
 data class ModelResponseVehicleList(
     var id: Int,
-    var body_length: Float,
+    var name: String,
+    var description: String,
     var created_at: String,
     var updated_at: String,
-    var weekly_discount: Int,
     var has_monthly_discount: Boolean,
-    var monthly_discount: Int,
+    var monthly_discount: Float,
 
-    var listing: ModelResponseVehicleListVehicle,
-    var vehicle_type: ModelResponseVehicleType,
-    var vehicle_make: ModelresponseVehicleMakes,
-    var vehicle_model: ModelResponseVehicleModel,
+    var vehicle: ModelResponseVehicleListVehicle,
 
-    var vehicle_year: String,
+    var country: String,
+    var security_deposit: Float,
+
+    var cancellation_policy: ModelResponseCancellationPolicy,
+
+    var approval_policy: String,
+    var nightly_rate: Float,
+    var status: String,
+    var has_delivery: Boolean,
+    var delivery_distance: Float,
+    var delivery_cost_per_mile: Float,
+    var min_delivery_fee: Float,
+    var has_mileage_rate: Boolean,
+    var miles_included_per_day: Float,
+    var mileage_overage_charge: Float,
+    var has_generator: Boolean,
+    var generator_hours_per_day: Float,
+    var generator_overage_charge: Float,
+    var min_rental_duration_days: Float,
+    var has_generator_rate: Boolean,
+    var vin_number: String,
+    var registration_state_code: String,
+    var current_mileage: Float,
+    var has_salvage_title: Boolean,
+    var insurance_terms_accepted: Boolean,
+    var step_vehicle_details: Boolean,
+    var step_listing_details: Boolean,
+    var step_pricing: Boolean,
+    var street_1: String,
+    var street_2: String,
+    var city: String,
+    var state: String,
+    var zipcode: String,
+    var lat: Double,
+    var long: Double,
+    var allow_pets: Boolean,
+    var allow_tailgating: Boolean,
+    var allow_festivals : Boolean,
+    var allow_smoking: Boolean,
+    var has_weekly_discount: Boolean,
+    var weekly_discount: Float,
+
+    var owner: ModelResponseVehicleListOwner,
+
+    var auto_approval_notice_period : Int,
+
+    var images: ArrayList<ModelResponseVehicleListImages>,
+
+    var listing_addons: ArrayList<ModelResponseAddOns>
+)
+
+data class ModelResponseVehicleListVehicle(
+    var id: Int,
+    var body_length: Int,
+    var created_at: String,
+    var updated_at: String,
+    var listing: Int,
+    var vehicle_type: Int,
+    var vehicle_make: Int,
+    var vehicle_model: Int,
+    var vehicle_year: Int,
     var transmission: String,
     var fuel_type: String,
     var air_conditioner: Boolean,
@@ -58,61 +115,18 @@ data class ModelResponseVehicleList(
     var water_capacity: Int,
     var water_capacity_units: String,
     var sewage_capacity: Int,
-    var sewage_capacity_units: String,
-    var oven: Boolean
+    var sewage_capacity_units: String
 )
 
-data class ModelResponseVehicleListVehicle(
+data class ModelResponseCancellationPolicy(
     var id: Int,
     var name: String,
-    var description: String,
+    var valid_days: Int,
+    var discount_upto_valid_days: Int,
+    var discount_post_valid_days: Int,
     var created_at: String,
     var updated_at: String,
-    var has_monthly_discount: Boolean,
-    var vehicle: Int,
-    var country: String,
-    var user: Int,
-    var security_deposit: Int,
-    var cancellation_policy: Int,
-    var approval_policy: String,
-    var nightly_rate: Int,
-    var status: String,
-    var has_delivery: Boolean,
-    var delivery_distance: Int,
-    var delivery_cost_per_mile: Float,
-    var min_delivery_fee: Int,
-    var has_mileage_rate: Boolean,
-    var miles_included_per_day: Float,
-    var mileage_overage_charge: Float,
-    var has_generator: Boolean,
-    var generator_hours_per_day: Int,
-    var generator_overage_charge: Float,
-    var min_rental_duration_days: Int,
-    var has_generator_rate: Boolean,
-    var vin_number: String,
-    var registration_state_code: String,
-    var current_mileage: Int,
-    var has_salvage_title: Boolean,
-    var insurance_terms_accepted: Boolean,
-    var step_vehicle_details: Boolean,
-    var step_listing_details: Boolean,
-    var step_pricing: Boolean,
-    var street_1: String,
-    var street_2: String,
-    var city: String,
-    var state: String,
-    var zipcode: String,
-    var lat: Double,
-    var long: Double,
-    var allow_pets: Boolean,
-    var allow_tailgating: Boolean,
-    var allow_festivals: Boolean,
-    var allow_smoking: Boolean,
-    var has_weekly_discount: Boolean,
-    var weekly_discount: Int,
-    var owner: ModelResponseVehicleListOwner,
-    var auto_approval_notice_period: Int,
-    var images: ArrayList<ModelResponseVehicleListImages>
+    var listing: Int
 )
 
 data class ModelResponseVehicleListOwner(
@@ -121,5 +135,17 @@ data class ModelResponseVehicleListOwner(
     var last_name: String,
     var avatar_url: String,
     var first_name: String
+)
+
+data class ModelResponseAddOns(
+var id : Int,
+var name : String,
+var description : String,
+var price : Float,
+var quantity : Int,
+var created_at : String,
+var updated_at : String,
+var listing : Int,
+var required : Boolean
 )
 

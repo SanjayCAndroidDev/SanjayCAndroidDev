@@ -34,8 +34,6 @@ class ActivityVehicleDetails : BaseActivity() {
     private lateinit var activityVehicleDetailsBinding: ActivityVehicleDetailsBinding
     lateinit var dashboardViewModel: DashboardViewModel
 
-    private lateinit var vehicleListAdapter: ActivityDashboard.VehicleListAdapter
-
     lateinit var mModelResponseVehicleList: ModelResponseVehicleList
     private var vehicleID: Int = 0
 
@@ -80,78 +78,78 @@ class ActivityVehicleDetails : BaseActivity() {
     fun setData(mModelResponseVehicleList: ModelResponseVehicleList) {
         if (mModelResponseVehicleList != null) {
 
-            if (mModelResponseVehicleList.listing != null && mModelResponseVehicleList.listing.images != null) {
-                val adapter = ImageSliderAdapter(this, mModelResponseVehicleList.listing.images)
+            if (mModelResponseVehicleList != null && mModelResponseVehicleList.images != null) {
+                val adapter = ImageSliderAdapter(this, mModelResponseVehicleList.images)
                 activityVehicleDetailsBinding.activityVehicleDetailsRecyclerPhoto.adapter = adapter
                 activityVehicleDetailsBinding.activityVehicleDetailsDotsIndicator.setViewPager(
                     activityVehicleDetailsBinding.activityVehicleDetailsRecyclerPhoto
                 )
             }
 
-            if (mModelResponseVehicleList.listing != null) {
-                if (mModelResponseVehicleList.listing.name != null)
-                    activityVehicleDetailsBinding.activityVehicleDetailsTxtTitle.text = mModelResponseVehicleList.listing.name
+            if (mModelResponseVehicleList != null) {
+                if (mModelResponseVehicleList.name != null)
+                    activityVehicleDetailsBinding.activityVehicleDetailsTxtTitle.text = mModelResponseVehicleList.name
 
-                if (mModelResponseVehicleList.listing.description != null)
-                    activityVehicleDetailsBinding.activityVehicleDetailsTxtDesc.text = mModelResponseVehicleList.listing.description
+                if (mModelResponseVehicleList.description != null)
+                    activityVehicleDetailsBinding.activityVehicleDetailsTxtDesc.text = mModelResponseVehicleList.description
 
-                if(mModelResponseVehicleList.listing.allow_pets) {
+                if(mModelResponseVehicleList.allow_pets) {
                     activityVehicleDetailsBinding.activityVehicleDetailsTxtPetFriendly.setTextColor(ContextCompat.getColor(this, R.color.color_dark_blue_green))
                 } else {
                     activityVehicleDetailsBinding.activityVehicleDetailsTxtPetFriendly.setTextColor(ContextCompat.getColor(this, R.color.color_pale_gray))
                 }
 
-                if(mModelResponseVehicleList.listing.allow_festivals) {
+                if(mModelResponseVehicleList.allow_festivals) {
                     activityVehicleDetailsBinding.activityVehicleDetailsTxtFestival.setTextColor(ContextCompat.getColor(this, R.color.color_dark_blue_green))
                 } else {
                     activityVehicleDetailsBinding.activityVehicleDetailsTxtFestival.setTextColor(ContextCompat.getColor(this, R.color.color_pale_gray))
                 }
 
-                if(mModelResponseVehicleList.listing.allow_smoking) {
+                if(mModelResponseVehicleList.allow_smoking) {
                     activityVehicleDetailsBinding.activityVehicleDetailsTxtSmoking.setTextColor(ContextCompat.getColor(this, R.color.color_dark_blue_green))
                 } else {
                     activityVehicleDetailsBinding.activityVehicleDetailsTxtSmoking.setTextColor(ContextCompat.getColor(this, R.color.color_pale_gray))
                 }
 
-                if(mModelResponseVehicleList.listing.country != null && mModelResponseVehicleList.listing.nightly_rate != null) {
-                    activityVehicleDetailsBinding.activityVehicleDetailsTxtDailyRate.text = mModelResponseVehicleList.listing.country +" $" +mModelResponseVehicleList.listing.nightly_rate.toString()
+                if(mModelResponseVehicleList.country != null && mModelResponseVehicleList.nightly_rate != null) {
+                    activityVehicleDetailsBinding.activityVehicleDetailsTxtDailyRate.text = mModelResponseVehicleList.country +" $" +mModelResponseVehicleList.nightly_rate.toString()
                 }
 
-                if(mModelResponseVehicleList.listing.country != null && mModelResponseVehicleList.listing.security_deposit != null) {
-                    activityVehicleDetailsBinding.activityVehicleDetailsTxtSecurityDeposite.text = mModelResponseVehicleList.listing.country +" $" +mModelResponseVehicleList.listing.security_deposit.toString()
+                if(mModelResponseVehicleList.country != null && mModelResponseVehicleList.security_deposit != null) {
+                    activityVehicleDetailsBinding.activityVehicleDetailsTxtSecurityDeposite.text = mModelResponseVehicleList.country +" $" +mModelResponseVehicleList.security_deposit.toString()
                 }
 
-                if(mModelResponseVehicleList.listing.miles_included_per_day != null) {
-                    activityVehicleDetailsBinding.activityVehicleDetailsTxtMilePerDay.text = mModelResponseVehicleList.listing.miles_included_per_day.toString() + " miles included per day."
+                if(mModelResponseVehicleList.miles_included_per_day != null) {
+                    activityVehicleDetailsBinding.activityVehicleDetailsTxtMilePerDay.text = mModelResponseVehicleList.miles_included_per_day.toString() + " miles included per day."
                 }
 
-                if(mModelResponseVehicleList.listing.country != null && mModelResponseVehicleList.listing.mileage_overage_charge != null) {
-                    activityVehicleDetailsBinding.activityVehicleDetailsTxtMilePerAdditionalUser.text = mModelResponseVehicleList.listing.country +" $" +mModelResponseVehicleList.listing.mileage_overage_charge.toString() + " per mile of additional use."
+                if(mModelResponseVehicleList.country != null && mModelResponseVehicleList.mileage_overage_charge != null) {
+                    activityVehicleDetailsBinding.activityVehicleDetailsTxtMilePerAdditionalUser.text = mModelResponseVehicleList.country +" $" +mModelResponseVehicleList.mileage_overage_charge.toString() + " per mile of additional use."
                 }
 
-                if(mModelResponseVehicleList.listing.owner != null) {
-                    activityVehicleDetailsBinding.activityVehicleDetailsTxtOwner.text = mModelResponseVehicleList.listing.owner.first_name +" "+mModelResponseVehicleList.listing.owner.last_name + "'s Vehicle Rental"
+                if(mModelResponseVehicleList.owner != null) {
+                    activityVehicleDetailsBinding.activityVehicleDetailsTxtOwner.text = mModelResponseVehicleList.owner.first_name +" "+mModelResponseVehicleList.owner.last_name + "'s Vehicle Rental"
                 }
 
-                if(mModelResponseVehicleList.listing.nightly_rate != null) {
-                    activityVehicleDetailsBinding.activityVehicleDetailsTxtBuy.text = mModelResponseVehicleList.listing.country +" $" +mModelResponseVehicleList.listing.nightly_rate.toString() +"/night"
+                if(mModelResponseVehicleList.nightly_rate != null) {
+                    activityVehicleDetailsBinding.activityVehicleDetailsTxtBuy.text = mModelResponseVehicleList.country +" $" +mModelResponseVehicleList.nightly_rate.toString() +"/night"
                 }
             }
 
 
-            if (mModelResponseVehicleList.overnight_guests != null) {
-                activityVehicleDetailsBinding.activityVehicleDetailsTxtBed.text = mModelResponseVehicleList.overnight_guests.toString()
-                activityVehicleDetailsBinding.activityVehicleDetailsTxtFilledBed.text = mModelResponseVehicleList.overnight_guests.toString()
+            if (mModelResponseVehicleList.vehicle != null) {
+                activityVehicleDetailsBinding.activityVehicleDetailsTxtBed.text = mModelResponseVehicleList.vehicle.overnight_guests.toString()
+                activityVehicleDetailsBinding.activityVehicleDetailsTxtFilledBed.text = mModelResponseVehicleList.vehicle.overnight_guests.toString()
             }
 
-            if (mModelResponseVehicleList.body_length != null) {
-                activityVehicleDetailsBinding.activityVehicleDetailsTxtLength.text = mModelResponseVehicleList.body_length.toString() + "ft"
-                activityVehicleDetailsBinding.activityVehicleDetailsTxtFilledLength.text = mModelResponseVehicleList.body_length.toString() + "ft"
+            if (mModelResponseVehicleList.vehicle.body_length != null) {
+                activityVehicleDetailsBinding.activityVehicleDetailsTxtLength.text = mModelResponseVehicleList.vehicle.body_length.toString() + "ft"
+                activityVehicleDetailsBinding.activityVehicleDetailsTxtFilledLength.text = mModelResponseVehicleList.vehicle.body_length.toString() + "ft"
             }
 
-            if (mModelResponseVehicleList.vehicle_year != null) {
-                activityVehicleDetailsBinding.activityVehicleDetailsTxtYear.text = mModelResponseVehicleList.vehicle_year
-                activityVehicleDetailsBinding.activityVehicleDetailsTxtFilledYear.text = mModelResponseVehicleList.vehicle_year
+            if (mModelResponseVehicleList.vehicle.vehicle_year != null) {
+                activityVehicleDetailsBinding.activityVehicleDetailsTxtYear.text = mModelResponseVehicleList.vehicle.vehicle_year.toString()
+                activityVehicleDetailsBinding.activityVehicleDetailsTxtFilledYear.text = mModelResponseVehicleList.vehicle.vehicle_year.toString()
             }
 
 

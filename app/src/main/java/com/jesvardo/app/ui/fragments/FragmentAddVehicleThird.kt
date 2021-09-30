@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
@@ -28,7 +29,7 @@ class FragmentAddVehicleThird : Fragment() {
         super.onCreate(savedInstanceState)
         intPosition = arguments!!.getInt("position")
         baseActivity = activity as ActivityAddVehicleDetails
-
+        baseActivity.window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
     }
 
     companion object {

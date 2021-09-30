@@ -36,6 +36,7 @@
                 android:layout_marginTop="@dimen/_12sdp"
                 style="@style/MySeekBar"
                 android:layout_marginBottom="@dimen/_12sdp"
+                android:thumb="@drawable/bg_seekbar_thumb"
                 android:max="100" />
 
 

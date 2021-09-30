@@ -34,13 +34,16 @@ class AppConstants {
         const val URL_SOCIAL_LOGIN = "auth/social"
 
         const val URL_GET_VEHICLE_TYPE = " vehicle-types?active=true"
-        const val URL_GET_VEHICLE_LIST  = "vehicles"
+        const val URL_GET_VEHICLE_LIST  = "listings"
         const val URL_GET_VEHICLE_MAKE = "vehicle-makes/{id} "
-        const val URL_GET_VEHICLE_DETAILS = "vehicles/{id}"
+        const val URL_GET_VEHICLE_DETAILS = "listings/{id}"
+        const val URL_GET_VEHICLE_MODELS = "vehicle-models/{id}"
 
         const val URL_GET_ADDRESS = " addresses"
         const val URL_GET_BOOKINGS = " bookings"
         const val URL_GET_BOOKING_DETAILS = " bookings/{id}"
+
+        const val URL_GET_USER_DETAILS = " users/{id}"
 
         const val URL_LOGOUT = "v1/auth/logout/{id}"
 

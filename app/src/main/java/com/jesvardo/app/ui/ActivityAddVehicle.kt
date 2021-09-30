@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.BaseAdapter
 import android.widget.TextView
@@ -15,7 +16,9 @@ import androidx.lifecycle.ViewModelProviders
 import com.jesvardo.app.R
 import com.jesvardo.app.base.BaseActivity
 import com.jesvardo.app.databinding.ActivityAddVehicleBinding
+import com.jesvardo.app.network.model.ModelResponseGetVehicleType
 import com.jesvardo.app.network.model.ModelresponseVehicleMakes
+import com.jesvardo.app.ui.fragments.FragmentAddVehicleFirst
 import com.jesvardo.app.ui.viewmodels.AddVehicleViewModel
 import com.jesvardo.app.utils.listeners.setSafeOnClickListener
 import kotlinx.android.synthetic.main.base_activity.*
@@ -27,9 +30,11 @@ class ActivityAddVehicle : BaseActivity() {
 
     private lateinit var addVehicleViewModel: AddVehicleViewModel
 
-    lateinit var listGetVehicleType: ArrayList<ModelresponseVehicleMakes>
+    lateinit var listGetVehicleType: ArrayList<ModelResponseGetVehicleType>
 
     var adapter: CustomAdapter? = null
+
+    var typeID: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +53,7 @@ class ActivityAddVehicle : BaseActivity() {
 
         activityAddVehicleBinding.activityAddVehicleTxtGetStarted.setSafeOnClickListener {
             val i = Intent(this@ActivityAddVehicle, ActivityAddVehicleDetails::class.java)
+            i.putExtra("typeID", typeID)
             startActivity(i)
         }
 
@@ -77,6 +83,18 @@ class ActivityAddVehicle : BaseActivity() {
                 }
             }
         })
+
+
+        activityAddVehicleBinding.activityAddVehicleSpinner?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                typeID = listGetVehicleType[position].id
+            }
+        }
+
     }
 
 
@@ -92,19 +110,19 @@ class ActivityAddVehicle : BaseActivity() {
 
     class CustomAdapter(
         private val mContext: Context,
-        private val arrayList: ArrayList<ModelresponseVehicleMakes>
+        private val arrayList: ArrayList<ModelResponseGetVehicleType>
     ) : BaseAdapter() {
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
             val mLayoutInflater = (mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater)
             @SuppressLint("ViewHolder")
             val rowView = mLayoutInflater.inflate(R.layout.raw_spinner_item, parent, false)
             val mTextViewItem = rowView.findViewById<TextView>(R.id.raw_spinner_item_textview)
-            mTextViewItem.text = arrayList[position].name
+            mTextViewItem.text = arrayList[position].label
             return rowView
         }
 
         override fun getItem(position: Int): String {
-            return arrayList[position].name
+            return arrayList[position].label
         }
 
         override fun getItemId(p0: Int): Long {
@@ -114,8 +132,6 @@ class ActivityAddVehicle : BaseActivity() {
         override fun getCount(): Int {
             return arrayList.size
         }
-
-
     }
 
 //    class CustomSpinnerCouponAdapter(

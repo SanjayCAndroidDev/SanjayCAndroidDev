@@ -22,10 +22,7 @@ import android.text.Html
 import android.util.Base64.DEFAULT
 import android.util.Base64.decode
 import android.util.DisplayMetrics
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.view.Window
+import android.view.*
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -147,6 +144,7 @@ class FragmentAddVehicleFourth : Fragment() {
 
         intPosition = arguments!!.getInt("position")
         baseActivity = activity as ActivityAddVehicleDetails
+        baseActivity.window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
 
         dFormat = DecimalFormat("#.######")
         val displayMetrics = DisplayMetrics()

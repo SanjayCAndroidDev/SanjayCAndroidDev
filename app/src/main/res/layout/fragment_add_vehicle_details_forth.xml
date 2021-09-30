@@ -213,6 +213,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:buttonTint="@color/color_orange"
                     android:paddingStart="@dimen/_4sdp"
                     android:text="Yes" />
 
@@ -220,6 +221,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:buttonTint="@color/color_orange"
                     android:paddingStart="@dimen/_4sdp"
                     android:text="No" />
 
@@ -246,6 +248,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:buttonTint="@color/color_orange"
                     android:paddingStart="@dimen/_4sdp"
                     android:text="Yes" />
 
@@ -253,6 +256,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:buttonTint="@color/color_orange"
                     android:paddingStart="@dimen/_4sdp"
                     android:text="No" />
 
@@ -284,7 +288,7 @@
                 android:layout_marginTop="@dimen/_6sdp"
                 android:background="@drawable/bg_spinner_add_vehicle_details"
                 android:hint="Enter security_deposit"
-                android:inputType="phone"
+                android:inputType="number"
                 android:padding="@dimen/_8sdp"
                 android:textSize="@dimen/_14sdp" />
 
@@ -328,12 +332,14 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingStart="@dimen/_4sdp"
+                    android:buttonTint="@color/color_orange"
                     android:text="Yes" />
 
                 <androidx.appcompat.widget.AppCompatCheckBox
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:buttonTint="@color/color_orange"
                     android:paddingStart="@dimen/_4sdp"
                     android:text="No" />
 
@@ -480,12 +486,14 @@
                 android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_16sdp"
                 android:layout_weight="1"
+                android:buttonTint="@color/color_orange"
                 android:paddingStart="@dimen/_4sdp"
                 android:text="Allow unlimited miles" />
 
             <androidx.appcompat.widget.AppCompatCheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:buttonTint="@color/color_orange"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_weight="1"
@@ -516,6 +524,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="@dimen/_12sdp"
                     android:layout_marginEnd="@dimen/_12sdp"
+                    android:inputType="number"
                     android:layout_toStartOf="@+id/fragment_add_vehicle_detail_forth_view_include_mile"
                     android:background="@null" />
 
@@ -562,6 +571,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="@dimen/_12sdp"
                     android:layout_marginEnd="@dimen/_12sdp"
+                    android:inputType="number"
                     android:layout_toStartOf="@+id/fragment_add_vehicle_detail_forth_view_overage_charge"
                     android:background="@null" />
 
@@ -614,12 +624,14 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingStart="@dimen/_4sdp"
+                    android:buttonTint="@color/color_orange"
                     android:text="No" />
 
                 <androidx.appcompat.widget.AppCompatCheckBox
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:buttonTint="@color/color_orange"
                     android:paddingStart="@dimen/_4sdp"
                     android:text="Yes" />
 
@@ -639,6 +651,7 @@
                 android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_16sdp"
                 android:layout_weight="1"
+                android:buttonTint="@color/color_orange"
                 android:paddingStart="@dimen/_4sdp"
                 android:text="Allow unlimited generator usage" />
 
@@ -648,6 +661,7 @@
                 android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_weight="1"
+                android:buttonTint="@color/color_orange"
                 android:paddingStart="@dimen/_4sdp"
                 android:text="Set my own rates" />
 
@@ -675,6 +689,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="@dimen/_12sdp"
                     android:layout_marginEnd="@dimen/_12sdp"
+                    android:inputType="number"
                     android:layout_toStartOf="@+id/fragment_add_vehicle_detail_forth_view_generator_include_mile"
                     android:background="@null" />
 
@@ -721,6 +736,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="@dimen/_12sdp"
                     android:layout_marginEnd="@dimen/_12sdp"
+                    android:inputType="number"
                     android:layout_toStartOf="@+id/fragment_add_vehicle_detail_forth_view_generator_overage_charge"
                     android:background="@null" />
 

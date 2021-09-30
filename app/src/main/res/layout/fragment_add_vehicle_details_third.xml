@@ -61,6 +61,8 @@
                     android:id="@+id/fragment_add_vehicle_detail_third_switch_allow_pets"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:thumbTint="@color/color_orange"
+                    android:trackTint="@color/white"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="@dimen/_12sdp" />
 
@@ -93,6 +95,8 @@
                     android:id="@+id/fragment_add_vehicle_detail_third_switch_allow_tailgating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:thumbTint="@color/color_orange"
+                    android:trackTint="@color/white"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="@dimen/_12sdp" />
 
@@ -126,6 +130,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
+                    android:thumbTint="@color/color_orange"
+                    android:trackTint="@color/white"
                     android:layout_marginStart="@dimen/_12sdp" />
 
             </RelativeLayout>
@@ -157,6 +163,8 @@
                     android:id="@+id/fragment_add_vehicle_detail_third_switch_allow_smoking"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:thumbTint="@color/color_orange"
+                    android:trackTint="@color/white"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="@dimen/_12sdp" />
 

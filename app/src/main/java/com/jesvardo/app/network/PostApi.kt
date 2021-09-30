@@ -33,6 +33,13 @@ interface PostApi {
     @GET(AppConstants.URL_GET_VEHICLE_TYPE)
     fun getVehicleType(): Observable<ArrayList<ModelResponseGetVehicleType>>
 
+
+    @GET(AppConstants.URL_GET_VEHICLE_MODELS)
+    fun getVehicleModel(@Header("Authorization") strToken: String, @Path("id") strUserID: String?): Observable<ArrayList<ModelResponseVehicleModel>>
+
+    @GET(AppConstants.URL_GET_VEHICLE_MAKE)
+    fun getVehicleMakes(@Header("Authorization") strToken: String, @Path("id") strUserID: String?): Observable<ModelresponseVehicleMakes>
+
     @GET(AppConstants.URL_GET_VEHICLE_TYPE)
     fun getVehicleType(@Query("style") strType: String): Observable<ArrayList<ModelResponseGetVehicleType>>
 
@@ -58,4 +65,7 @@ interface PostApi {
     @GET(AppConstants.URL_GET_BOOKING_DETAILS)
     fun getMyTripDetails(@Header("Authorization") strToken: String, @Path("id") strUserID: String?): Observable<ModelResponseMyBookingList>
 
+
+    @GET(AppConstants.URL_GET_USER_DETAILS)
+    fun getUserDetails(@Header("Authorization") strToken: String, @Path("id") strUserID: String?): Observable<ModelResponseUserDeatils>
 }

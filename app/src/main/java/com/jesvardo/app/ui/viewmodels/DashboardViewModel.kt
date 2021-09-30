@@ -98,15 +98,15 @@ class DashboardViewModel : BaseViewModel() {
             }
             .subscribe({
                 if(strType == "drivable") {
-                    vehicleTypeDrivableSuccess.value = true
                     listVehicleTypeDrivable = it
+                    vehicleTypeDrivableSuccess.value = true
                 } else {
-                    vehicleTypeTowableSuccess.value = true
                     listVehicleTypeTowable = it
+                    vehicleTypeTowableSuccess.value = true
                 }
 
             }, {
-
+                println("Ok Sanjay....."+it.toString())
                 when (it) {
                     is HttpException -> {
                         try {

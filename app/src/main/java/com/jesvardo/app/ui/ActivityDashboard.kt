@@ -1,15 +1,16 @@
 package com.jesvardo.app.ui
 
 import android.annotation.SuppressLint
+import android.app.DatePickerDialog
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.*
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.RelativeLayout
-import android.widget.TextView
+import android.widget.*
+import androidx.appcompat.widget.AppCompatCheckBox
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.PagerAdapter
 import com.bumptech.glide.Glide
+import com.crystal.crystalrangeseekbar.widgets.BubbleThumbRangeSeekbar
 import com.jesvardo.app.R
 import com.jesvardo.app.base.BaseActivity
 import com.jesvardo.app.databinding.ActivityDashboardBinding
@@ -30,6 +32,10 @@ import com.jesvardo.app.utils.AppConstants
 import com.jesvardo.app.utils.listeners.setSafeOnClickListener
 import com.jesvardo.app.utils.loadImage
 import kotlinx.android.synthetic.main.base_activity.*
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 
 class ActivityDashboard : BaseActivity() {
@@ -38,12 +44,28 @@ class ActivityDashboard : BaseActivity() {
     lateinit var dashboardViewModel: DashboardViewModel
 
     private lateinit var vehicleListAdapter: VehicleListAdapter
+    private lateinit var vehicleTypeAdapterDrivable: VehicleTypeAdapterDrivable
+    private lateinit var vehicleTypeAdapterTowable: VehicleTypeAdapterTowable
     private lateinit var filterAdapter: FilterAdapter
 
     lateinit var filterType: ArrayList<String>
-    lateinit var listVehicleTypeDrivable: ArrayList<ModelResponseGetVehicleType>
-    lateinit var listVehicleTypeTowable: ArrayList<ModelResponseGetVehicleType>
-    lateinit var listVehicle: ArrayList<ModelResponseVehicleList>
+    private var listVehicleTypeDrivable: ArrayList<ModelResponseGetVehicleType> = ArrayList()
+    private var listVehicleTypeTowable: ArrayList<ModelResponseGetVehicleType> = ArrayList()
+
+    var listVehicle: ArrayList<ModelResponseVehicleList> = ArrayList()
+    var listVehicleTemp: ArrayList<ModelResponseVehicleList> = ArrayList()
+
+    private var totalGuest: Int = 14
+    private var totalPassenger: Int = 14
+
+    private var strStartDate: String = ""
+    private var strEndDate: String = ""
+    private var strVehicleType: String = "drivable"
+
+    private var intMinValue: Int = 1
+    private var intMaxValue: Int = 10000
+
+    val dateFormat = SimpleDateFormat("yyyy-MM-dd")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,6 +84,8 @@ class ActivityDashboard : BaseActivity() {
         dashboardViewModel.strError.observe(this, Observer {
             if (it != "") {
                 showMessage(it)
+
+                dashboardViewModel.strError.value = ""
             }
         })
 
@@ -77,8 +101,11 @@ class ActivityDashboard : BaseActivity() {
             activityDashboardBinding.activityDashboardViewpagerPhoto
         );
 
-        activityDashboardBinding.activityDashboardTxtUserName.text = "Hi ${appPreferences.getAppPrefString(
-            AppConstants.PREF_USER_FIRST_NAME)} ${appPreferences.getAppPrefString(AppConstants.PREF_USER_LAST_NAME)}"
+        activityDashboardBinding.activityDashboardTxtUserName.text = "Hi ${
+            appPreferences.getAppPrefString(
+                AppConstants.PREF_USER_FIRST_NAME
+            )
+        } ${appPreferences.getAppPrefString(AppConstants.PREF_USER_LAST_NAME)}"
 
         activityDashboardBinding.activityDashboardRlNotification.setSafeOnClickListener {
             val i = Intent(this@ActivityDashboard, ActivityNotification::class.java)
@@ -120,12 +147,15 @@ class ActivityDashboard : BaseActivity() {
         dashboardViewModel.vehicleListSuccess.observe(this, Observer {
             if (it) {
                 listVehicle = dashboardViewModel.listVehicle
+                listVehicleTemp = dashboardViewModel.listVehicle
 
                 var mLayoutManager = LinearLayoutManager(applicationContext)
                 mLayoutManager.orientation = LinearLayoutManager.VERTICAL
                 vehicleListAdapter = VehicleListAdapter(this@ActivityDashboard, listVehicle)
-                activityDashboardBinding.activityDashboardRecyclerVehicleList.layoutManager = mLayoutManager
-                activityDashboardBinding.activityDashboardRecyclerVehicleList.adapter = vehicleListAdapter
+                activityDashboardBinding.activityDashboardRecyclerVehicleList.layoutManager =
+                    mLayoutManager
+                activityDashboardBinding.activityDashboardRecyclerVehicleList.adapter =
+                    vehicleListAdapter
             }
         })
 
@@ -140,10 +170,37 @@ class ActivityDashboard : BaseActivity() {
         })
 
         var hashMap: HashMap<String, String> = HashMap<String, String>()
-        hashMap["transmission"] = "automatic"
-        hashMap["fuel_type"] = "diesel"
+        hashMap["nightly_rate_gt"] = intMinValue.toString()
+        hashMap["nightly_rate_lt"] = intMaxValue.toString()
         dashboardViewModel.getVehicleList(hashMap)
 
+
+        activityDashboardBinding.activityDashboardEditSearch.addTextChangedListener(object :
+            TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (s != null) {
+                    listVehicle = ArrayList()
+                    if (s.isNotEmpty()) {
+                        for ((potion, item) in listVehicleTemp.withIndex()) {
+                            if (item.name.contains(s.toString())) {
+                                listVehicle.add(listVehicleTemp[potion])
+                            }
+                        }
+                    } else {
+                        listVehicle.addAll(listVehicleTemp)
+                    }
+                    if (vehicleListAdapter != null) {
+                        vehicleListAdapter.swipe(listVehicle)
+                    }
+                }
+            }
+        })
     }
 
 
@@ -207,10 +264,20 @@ class ActivityDashboard : BaseActivity() {
             if (selectedPotion > -1) {
                 if (position == selectedPotion) {
                     holder.textViewName.setBackgroundResource(R.drawable.bd_orage_fill)
-                    holder.textViewName.setTextColor(ContextCompat.getColor(mContext, R.color.white))
+                    holder.textViewName.setTextColor(
+                        ContextCompat.getColor(
+                            mContext,
+                            R.color.white
+                        )
+                    )
                 } else {
                     holder.textViewName.setBackgroundResource(R.drawable.bd_orage_line)
-                    holder.textViewName.setTextColor(ContextCompat.getColor(mContext, R.color.color_red_orange))
+                    holder.textViewName.setTextColor(
+                        ContextCompat.getColor(
+                            mContext,
+                            R.color.color_red_orange
+                        )
+                    )
                 }
             }
         }
@@ -223,9 +290,12 @@ class ActivityDashboard : BaseActivity() {
     ) : RecyclerView.Adapter<VehicleListAdapter.MyViewHolder>() {
 
         class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-            val textViewName: TextView = view.findViewById<TextView>(R.id.raw_dash_vehicle_list_txt_name)
-            val textViewPrice: TextView = view.findViewById<TextView>(R.id.raw_dash_vehicle_list_txt_price)
-            val imageMian: ImageView = view.findViewById<ImageView>(R.id.raw_dash_vehicle_list_img_main)
+            val textViewName: TextView =
+                view.findViewById<TextView>(R.id.raw_dash_vehicle_list_txt_name)
+            val textViewPrice: TextView =
+                view.findViewById<TextView>(R.id.raw_dash_vehicle_list_txt_price)
+            val imageMian: ImageView =
+                view.findViewById<ImageView>(R.id.raw_dash_vehicle_list_img_main)
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -238,6 +308,11 @@ class ActivityDashboard : BaseActivity() {
             return listVehicle.size
         }
 
+        fun swipe(listVehicle: ArrayList<ModelResponseVehicleList>) {
+            this.listVehicle = listVehicle
+            notifyDataSetChanged()
+        }
+
         override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
             holder.itemView.setSafeOnClickListener {
                 val intent = Intent(it.context, ActivityVehicleDetails::class.java)
@@ -245,19 +320,18 @@ class ActivityDashboard : BaseActivity() {
                 it.context.startActivity(intent)
             }
 
-            if (listVehicle[position] != null && listVehicle[position].listing != null && listVehicle[position].listing.name != null)
-                holder.textViewName.text = listVehicle[position].listing.name
+            if (listVehicle[position] != null && listVehicle[position].name != null)
+                holder.textViewName.text = listVehicle[position].name
 
-            if (listVehicle[position] != null && listVehicle[position].listing != null && listVehicle[position].listing.country != null
-                && listVehicle[position].listing.miles_included_per_day != null
-            ) {
+            if (listVehicle[position] != null && listVehicle[position].miles_included_per_day != null && listVehicle[position].country != null) {
                 holder.textViewPrice.text =
-                    listVehicle[position].listing.country + " $" + listVehicle[position].listing.miles_included_per_day
+                    listVehicle[position].country + " $" + listVehicle[position].miles_included_per_day
             }
 
-            if (listVehicle[position] != null && listVehicle[position].listing != null && listVehicle[position].listing.images != null
-                && listVehicle[position].listing.images.isNotEmpty()) {
-                loadImage(holder.imageMian, listVehicle[position].listing.images[0].url)
+            if (listVehicle[position] != null && listVehicle[position].images != null
+                && listVehicle[position].images.size > 0
+            ) {
+                loadImage(holder.imageMian, listVehicle[position].images[0].url)
             }
 
         }
@@ -315,7 +389,73 @@ class ActivityDashboard : BaseActivity() {
         dialog.setContentView(R.layout.dialog_filter_date)
 
         val txtCancel = dialog.findViewById(R.id.dialog_filter_date_txt_cancel) as TextView
+        val txtApply = dialog.findViewById(R.id.dialog_filter_date_txt_apply) as TextView
+        val txtStartDate = dialog.findViewById(R.id.dialog_filter_date_txt_start_date) as TextView
+        val txtEndDate = dialog.findViewById(R.id.dialog_filter_date_txt_end_date) as TextView
+
         txtCancel.setOnClickListener { dialog.dismiss() }
+
+        val c = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
+
+
+        val startDate = DatePickerDialog(
+            this@ActivityDashboard,
+            DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                var month = monthOfYear + 1
+                txtStartDate.text = "$dayOfMonth/$month/$year"
+                strStartDate = "$year-$month-$dayOfMonth"
+            },
+            year,
+            month,
+            day
+        )
+        startDate.datePicker.minDate = c.timeInMillis
+
+        val endDate = DatePickerDialog(
+            this@ActivityDashboard,
+            DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+
+                var month = monthOfYear + 1
+                txtEndDate.text = "$dayOfMonth/$month/$year"
+                strEndDate = "$year-$month-$dayOfMonth"
+            },
+            year,
+            month,
+            day
+        )
+
+        txtApply.setOnClickListener {
+
+            if (strStartDate == "") {
+                dashboardViewModel.strError.value = "Please select start date for search result"
+            } else if (strEndDate == "") {
+                dashboardViewModel.strError.value = "Please select end date for search result"
+            } else {
+                dialog.dismiss()
+
+                var hashMap: HashMap<String, String> = HashMap<String, String>()
+                dashboardViewModel.getVehicleList(hashMap)
+            }
+        }
+
+        txtStartDate.setOnClickListener {
+            strEndDate = ""
+            txtEndDate.text = "DD/MM/YYYY"
+            startDate.show()
+        }
+
+        txtEndDate.setOnClickListener {
+            if (strStartDate == "") {
+                dashboardViewModel.strError.value = "Please select start date first."
+            } else {
+                endDate.datePicker.minDate = dateFormat.parse(strStartDate).time
+                endDate.show()
+            }
+        }
+
         dialog.show()
     }
 
@@ -327,6 +467,26 @@ class ActivityDashboard : BaseActivity() {
         dialog.setContentView(R.layout.dialog_filter_city)
 
         val txtCancel = dialog.findViewById(R.id.dialog_filter_city_txt_cancel) as TextView
+        val txtApply = dialog.findViewById(R.id.dialog_filter_city_txt_apply) as TextView
+
+        val txtEditText = dialog.findViewById(R.id.dialog_filter_city_edit_city_name) as EditText
+
+
+        txtApply.setOnClickListener {
+            if (txtEditText.text.toString().trim() == "") {
+                dashboardViewModel.strError.value = "Please enter city name for search result"
+            } else {
+                dialog.dismiss()
+
+                var hashMap: HashMap<String, String> = HashMap<String, String>()
+                hashMap["city_eq"] = txtEditText.text.toString().trim()
+                hashMap["nightly_rate_gt"] = intMinValue.toString()
+                hashMap["nightly_rate_lt"] = intMaxValue.toString()
+                dashboardViewModel.getVehicleList(hashMap)
+            }
+        }
+
+
         txtCancel.setOnClickListener { dialog.dismiss() }
         dialog.show()
     }
@@ -343,7 +503,56 @@ class ActivityDashboard : BaseActivity() {
         dialog.setContentView(R.layout.dialog_filter_guests)
 
         val txtCancel = dialog.findViewById(R.id.dialog_filter_guests_txt_cancel) as TextView
+        val txtApply = dialog.findViewById(R.id.dialog_filter_guests_txt_apply) as TextView
+
+        val txtGuestPlus =
+            dialog.findViewById(R.id.dialog_filter_guests_txt_plus_guests) as TextView
+        val txtGuestMinus =
+            dialog.findViewById(R.id.dialog_filter_guests_txt_minus_guests) as TextView
+        val txtGuestTotal = dialog.findViewById(R.id.dialog_filter_guests_txt_guests) as TextView
+
+        val txtPassengerPlus =
+            dialog.findViewById(R.id.dialog_filter_guests_txt_plus_passenger) as TextView
+        val txtPassengerMinus =
+            dialog.findViewById(R.id.dialog_filter_guests_txt_minus_passenger) as TextView
+        val txtPassengerTotal =
+            dialog.findViewById(R.id.dialog_filter_guests_txt_passenger) as TextView
+
+        txtGuestPlus.setOnClickListener {
+            totalGuest++
+            txtGuestTotal.text = totalGuest.toString()
+        }
+
+        txtGuestMinus.setOnClickListener {
+            if (totalGuest > 0) {
+                totalGuest--
+            }
+            txtGuestTotal.text = totalGuest.toString()
+        }
+
+        txtPassengerPlus.setOnClickListener {
+            totalPassenger++
+            txtPassengerTotal.text = totalPassenger.toString()
+        }
+
+        txtPassengerMinus.setOnClickListener {
+            if (totalPassenger > 0) {
+                totalPassenger--
+            }
+            txtPassengerTotal.text = totalPassenger.toString()
+        }
+
         txtCancel.setOnClickListener { dialog.dismiss() }
+
+        txtApply.setOnClickListener {
+            dialog.dismiss()
+
+            var hashMap: HashMap<String, String> = HashMap<String, String>()
+            hashMap["nightly_rate_gt"] = intMinValue.toString()
+            hashMap["nightly_rate_lt"] = intMaxValue.toString()
+            dashboardViewModel.getVehicleList(hashMap)
+        }
+
         dialog.show()
     }
 
@@ -359,7 +568,31 @@ class ActivityDashboard : BaseActivity() {
         dialog.setContentView(R.layout.dialog_filter_price)
 
         val txtCancel = dialog.findViewById(R.id.dialog_filter_price_txt_cancel) as TextView
+        val txtApply = dialog.findViewById(R.id.dialog_filter_price_txt_apply) as TextView
+
+        val txtMinValue = dialog.findViewById(R.id.dialog_filter_price_txt_min) as TextView
+        val txtMaxValue = dialog.findViewById(R.id.dialog_filter_price_txt_max) as TextView
+
+        val rangeBar =
+            dialog.findViewById(R.id.dialog_filter_price_seekBar) as BubbleThumbRangeSeekbar
         txtCancel.setOnClickListener { dialog.dismiss() }
+
+        rangeBar.setOnRangeSeekbarChangeListener { minValue, maxValue ->
+            txtMinValue.text = "$" + minValue
+            txtMaxValue.text = "$" + maxValue
+
+            intMinValue = minValue.toInt()
+            intMinValue = maxValue.toInt()
+        }
+
+        txtApply.setOnClickListener {
+            dialog.dismiss()
+            var hashMap: HashMap<String, String> = HashMap<String, String>()
+            hashMap["nightly_rate_gt"] = intMinValue.toString()
+            hashMap["nightly_rate_lt"] = intMaxValue.toString()
+            dashboardViewModel.getVehicleList(hashMap)
+        }
+
         dialog.show()
     }
 
@@ -375,30 +608,142 @@ class ActivityDashboard : BaseActivity() {
         dialog.setContentView(R.layout.dialog_filter_vehicle_type)
 
         val txtCancel = dialog.findViewById(R.id.dialog_filter_vehicle_type_txt_cancel) as TextView
-        val txtDrivable = dialog.findViewById(R.id.dialog_filter_vehicle_type_txt_drivable) as TextView
-        val txtTowable = dialog.findViewById(R.id.dialog_filter_vehicle_type_txt_towable) as TextView
+        val txtApply = dialog.findViewById(R.id.dialog_filter_vehicle_type_txt_apply) as TextView
+        val txtDrivable =
+            dialog.findViewById(R.id.dialog_filter_vehicle_type_txt_drivable) as TextView
+        val txtTowable =
+            dialog.findViewById(R.id.dialog_filter_vehicle_type_txt_towable) as TextView
 
-        val reclerList = dialog.findViewById(R.id.dialog_filter_vehicle_type_recycler) as RecyclerView
+        val reclerList =
+            dialog.findViewById(R.id.dialog_filter_vehicle_type_recycler) as RecyclerView
+
+        var linearLayoutManager = LinearLayoutManager(applicationContext)
+        linearLayoutManager.orientation = LinearLayoutManager.VERTICAL
 
         txtDrivable.setOnClickListener {
+
+            strVehicleType = "drivable"
             txtDrivable.setBackgroundResource(R.drawable.bg_orange_fill_left)
             txtDrivable.setTextColor(ContextCompat.getColor(this@ActivityDashboard, R.color.white))
             txtTowable.setBackgroundResource(R.drawable.bg_orage_line_right)
-            txtTowable.setTextColor(ContextCompat.getColor(this@ActivityDashboard, R.color.color_red_orange))
+            txtTowable.setTextColor(
+                ContextCompat.getColor(
+                    this@ActivityDashboard,
+                    R.color.color_red_orange
+                )
+            )
+
+            vehicleTypeAdapterDrivable = VehicleTypeAdapterDrivable(this@ActivityDashboard)
+            reclerList.layoutManager = linearLayoutManager
+            reclerList.adapter = vehicleTypeAdapterDrivable
         }
 
         txtTowable.setOnClickListener {
+
+            strVehicleType = "towable"
             txtDrivable.setBackgroundResource(R.drawable.bg_orage_line_left)
-            txtDrivable.setTextColor(ContextCompat.getColor(this@ActivityDashboard, R.color.color_red_orange))
+            txtDrivable.setTextColor(
+                ContextCompat.getColor(
+                    this@ActivityDashboard,
+                    R.color.color_red_orange
+                )
+            )
             txtTowable.setBackgroundResource(R.drawable.bg_orange_fill_right)
             txtTowable.setTextColor(ContextCompat.getColor(this@ActivityDashboard, R.color.white))
+
+            vehicleTypeAdapterTowable = VehicleTypeAdapterTowable(this@ActivityDashboard)
+            reclerList.layoutManager = linearLayoutManager
+            reclerList.adapter = vehicleTypeAdapterTowable
         }
 
-        txtCancel.setOnClickListener { dialog.dismiss() }
+        vehicleTypeAdapterDrivable = VehicleTypeAdapterDrivable(this@ActivityDashboard)
+        reclerList.layoutManager = linearLayoutManager
+        reclerList.adapter = vehicleTypeAdapterDrivable
+
+        txtCancel.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        txtApply.setOnClickListener {
+            dialog.dismiss()
+            var hashMap: HashMap<String, String> = HashMap<String, String>()
+            hashMap["vehicle_type_eq"] = strVehicleType
+            hashMap["nightly_rate_gt"] = intMinValue.toString()
+            hashMap["nightly_rate_lt"] = intMaxValue.toString()
+            dashboardViewModel.getVehicleList(hashMap)
+        }
+
         dialog.show()
     }
 
 
+    class VehicleTypeAdapterDrivable(val mContext: ActivityDashboard) :
+        RecyclerView.Adapter<VehicleTypeAdapterDrivable.MyViewHolder>() {
+
+        class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+            val textViewName: TextView =
+                view.findViewById<TextView>(R.id.raw_dash_vehicle_type_txt_title)
+            val checkBox: AppCompatCheckBox =
+                view.findViewById<AppCompatCheckBox>(R.id.raw_dash_vehicle_type_check)
+        }
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+            val itemView = LayoutInflater.from(parent.context)
+                .inflate(R.layout.raw_dash_vehicle_type, parent, false)
+            return MyViewHolder(itemView)
+        }
+
+        override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+            holder.textViewName.text = mContext.listVehicleTypeDrivable[position].label
+            holder.checkBox.isChecked = mContext.listVehicleTypeDrivable[position].isSeleted
+
+            holder.itemView.setOnClickListener {
+                mContext.listVehicleTypeDrivable[position].isSeleted =
+                    !mContext.listVehicleTypeDrivable[position].isSeleted
+                notifyDataSetChanged()
+            }
+        }
+
+        override fun getItemCount(): Int {
+            return mContext.listVehicleTypeDrivable.size
+        }
+
+    }
+
+    class VehicleTypeAdapterTowable(
+        val mContext: ActivityDashboard
+    ) : RecyclerView.Adapter<VehicleTypeAdapterTowable.MyViewHolder>() {
+
+        class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+            val textViewName: TextView =
+                view.findViewById<TextView>(R.id.raw_dash_vehicle_type_txt_title)
+            val checkBox: AppCompatCheckBox =
+                view.findViewById<AppCompatCheckBox>(R.id.raw_dash_vehicle_type_check)
+        }
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+            val itemView = LayoutInflater.from(parent.context)
+                .inflate(R.layout.raw_dash_vehicle_type, parent, false)
+            return MyViewHolder(itemView)
+        }
+
+        override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+
+            holder.textViewName.text = mContext.listVehicleTypeTowable[position].label
+            holder.checkBox.isChecked = mContext.listVehicleTypeTowable[position].isSeleted
+
+            holder.itemView.setOnClickListener {
+                mContext.listVehicleTypeTowable[position].isSeleted =
+                    !mContext.listVehicleTypeTowable[position].isSeleted
+                notifyDataSetChanged()
+            }
+        }
+
+        override fun getItemCount(): Int {
+            return mContext.listVehicleTypeTowable.size
+        }
+
+    }
 
 
 }

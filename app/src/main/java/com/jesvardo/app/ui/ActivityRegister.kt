@@ -3,6 +3,7 @@ package com.jesvardo.app.ui
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.jesvardo.app.R
 import com.jesvardo.app.base.BaseActivity
@@ -49,12 +50,34 @@ class ActivityRegister : BaseActivity() {
             }
         }
 
+        loginViewModel.booleanLoginSuccess.observe(this, Observer {
+            if (it) {
+                onBackPressed()
+            }
+        })
+
         activity_register_txt_login.setSafeOnClickListener {
             val i = Intent(this@ActivityRegister, ActivityLogin::class.java)
             startActivity(i)
             if (isFromLogin)
                 finish()
         }
+
+        loginViewModel.strError.observe(this, Observer {
+            if (it != "") {
+                showMessage(it)
+            }
+        })
+
+        loginViewModel.isShowProgress.observe(this, Observer {
+            if (it != null) {
+                if (it) {
+                    showProgress()
+                } else {
+                    hideProgress()
+                }
+            }
+        })
     }
 
     override fun onBackPressed() {

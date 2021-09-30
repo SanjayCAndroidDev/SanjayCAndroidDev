@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="@dimen/_280sdp"
     android:layout_height="wrap_content"
     android:background="@drawable/shape_background_default_popup"
@@ -17,35 +18,50 @@
         android:textSize="@dimen/_16sdp"
         android:textStyle="bold" />
 
-    <androidx.appcompat.widget.AppCompatSeekBar
+    <!--    <androidx.appcompat.widget.AppCompatSeekBar-->
+    <!--        android:id="@+id/dialog_filter_price_seekBar"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="@dimen/_12sdp"-->
+    <!--        style="@style/MySeekBarDialog"-->
+    <!--        android:max="100" />-->
+
+    <com.crystal.crystalrangeseekbar.widgets.BubbleThumbRangeSeekbar
         android:id="@+id/dialog_filter_price_seekBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_12sdp"
-        style="@style/MySeekBarDialog"
-        android:max="100" />
+        android:layout_height="@dimen/_50sdp"
+        app:bar_color="@color/grey"
+        app:bar_highlight_color="@color/color_red_orange"
+        app:corner_radius="10"
+        app:data_type="_integer"
+        app:left_thumb_image="@drawable/uncheck"
+        app:left_thumb_image_pressed="@drawable/uncheck"
+        app:max_value="10000"
+        app:min_value="1"
+        app:right_thumb_image="@drawable/uncheck"
+        app:right_thumb_image_pressed="@drawable/uncheck" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="@dimen/_6sdp"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp">
 
         <TextView
             android:id="@+id/dialog_filter_price_txt_min"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$1"
             android:textColor="@color/color_dark_blue_green"
-            android:textSize="@dimen/_14sdp"
-            android:text="$0"
-            android:layout_height="wrap_content"/>
+            android:textSize="@dimen/_14sdp" />
 
         <TextView
             android:id="@+id/dialog_filter_price_txt_max"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:text="$10000"
             android:textColor="@color/color_dark_blue_green"
-            android:textSize="@dimen/_14sdp"
-            android:layout_height="wrap_content"/>
+            android:textSize="@dimen/_14sdp" />
 
     </RelativeLayout>
 

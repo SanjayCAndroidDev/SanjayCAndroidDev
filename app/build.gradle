@@ -106,4 +106,7 @@ dependencies {
     implementation 'com.mindorks:paracamera:0.2.2'
     implementation 'com.google.android.gms:play-services-location:18.0.0'
 
+    //RangeBar
+    implementation 'com.crystal:crystalrangeseekbar:1.0.0'
+
 }

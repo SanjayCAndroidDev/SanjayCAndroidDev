@@ -20,6 +20,7 @@
             android:layout_marginTop="@dimen/_8sdp">
 
             <EditText
+                android:id="@+id/activity_dashboard_edit_search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -28,6 +29,7 @@
                 android:background="@drawable/bg_edit_search"
                 android:drawableStart="@drawable/search"
                 android:drawablePadding="@dimen/_8sdp"
+                android:hint="Search by RV name"
                 android:padding="@dimen/_10sdp"
                 android:paddingStart="@dimen/_12sdp"
                 android:singleLine="true" />
@@ -106,6 +108,7 @@
                     android:layout_marginStart="@dimen/_12sdp"
                     android:layout_marginTop="@dimen/_12sdp"
                     android:text="Sit Net"
+                    android:visibility="gone"
                     android:textColor="@color/color_dark_blue_green"
                     android:textSize="@dimen/_20sdp"
                     android:textStyle="bold" />
@@ -114,6 +117,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_12sdp"
+                    android:visibility="gone"
                     android:orientation="horizontal">
 
                     <View
@@ -134,6 +138,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_150sdp"
                     android:layout_marginStart="@dimen/_12sdp"
+                    android:visibility="gone"
                     android:layout_marginTop="@dimen/_8sdp" />
 
                 <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
@@ -144,6 +149,7 @@
                     android:layout_marginTop="@dimen/_8sdp"
                     app:dotsColor="@color/color_grey"
                     app:dotsCornerRadius="@dimen/_4sdp"
+                    android:visibility="gone"
                     app:dotsSize="@dimen/_8sdp"
                     app:dotsSpacing="@dimen/_4sdp"
                     app:dotsWidthFactor="2.5"

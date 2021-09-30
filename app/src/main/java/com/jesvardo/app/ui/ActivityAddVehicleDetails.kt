@@ -20,8 +20,13 @@ class ActivityAddVehicleDetails : BaseActivity() {
 
     private lateinit var introViewPagerAdapter : IntroViewPagerAdapter
 
+    var intPosition:Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
+        intPosition = intent.getIntExtra("intPosition", 0);
 
         activityAddVehicleDetailsBinding =  putContentView(R.layout.activity_add_vehicle_details) as ActivityAddVehicleDetailsBinding
 
@@ -87,6 +92,9 @@ class ActivityAddVehicleDetails : BaseActivity() {
         })
 
         activityAddVehicleDetailsBinding.activityAddVehicleDetailSeekBar.progress = 20
+
+        activityAddVehicleDetailsBinding.activityAddVehicleDetailViewPager.currentItem = intPosition
+
     }
 
     override fun onResume() {
@@ -119,6 +127,8 @@ class ActivityAddVehicleDetails : BaseActivity() {
                 4 -> {
                     return FragmentAddVehicleFifth.newInstance(position)
                 }
+
+
                 else -> {
                     return FragmentAddVehicleFirst.newInstance(position)
                 }

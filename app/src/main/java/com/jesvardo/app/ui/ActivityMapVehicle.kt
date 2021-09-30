@@ -82,12 +82,12 @@ class ActivityMapVehicle : BaseActivity() , OnMapReadyCallback{
         dashboardViewModel.vehicleListSuccess.observe(this, Observer {
             if (it) {
                 listVehicle = dashboardViewModel.listVehicle
-
+//
                 for ((itemPostion, vehicalDetail) in listVehicle.withIndex()) {
-                    val currentLatLng = LatLng(vehicalDetail.listing.lat, vehicalDetail.listing.long)
+                    val currentLatLng = LatLng(vehicalDetail.lat, vehicalDetail.long)
                     putMarkerOnMap(currentLatLng, itemPostion, vehicalDetail)
                 }
-
+//
                 val bounds = builder.build()
                 val padding = 0 // offset from edges of the map in pixels
                 val cu = CameraUpdateFactory.newLatLngBounds(bounds, padding)
@@ -107,8 +107,6 @@ class ActivityMapVehicle : BaseActivity() , OnMapReadyCallback{
         })
 
         var hashMap: HashMap<String, String> = HashMap<String, String>()
-        hashMap["transmission"] = "automatic"
-        hashMap["fuel_type"] = "diesel"
         dashboardViewModel.getVehicleList(hashMap)
 
     }
@@ -183,7 +181,7 @@ class ActivityMapVehicle : BaseActivity() , OnMapReadyCallback{
 
         val markerOptions = MarkerOptions()
         markerOptions.position(mLatLng)
-        markerOptions.title(vehicalDetail.listing.name)
+        markerOptions.title(vehicalDetail.name)
 
         var icon: BitmapDescriptor? = null
         icon = BitmapDescriptorFactory.fromResource(R.drawable.pin)
@@ -199,10 +197,10 @@ class ActivityMapVehicle : BaseActivity() , OnMapReadyCallback{
     private fun showBottomView(intPosition: Int) {
         activity_map_vehicle_card_bottom.visibility = View.VISIBLE
 
-        loadImage(activityMapVehicleBinding.activityMapVehicleImgMain, listVehicle[intPosition].listing.images[0].url)
+        loadImage(activityMapVehicleBinding.activityMapVehicleImgMain, listVehicle[intPosition].images[0].url)
 
-        activityMapVehicleBinding.activityMapVehicleTxtName.text = listVehicle[intPosition].listing.name
-        activityMapVehicleBinding.activityMapVehicleTxtPrice.text = listVehicle[intPosition].listing.country +" $"+listVehicle[intPosition].listing.nightly_rate.toString()
+        activityMapVehicleBinding.activityMapVehicleTxtName.text = listVehicle[intPosition].name
+        activityMapVehicleBinding.activityMapVehicleTxtPrice.text = listVehicle[intPosition].country +" $"+listVehicle[intPosition].miles_included_per_day.toString()
 
         activity_map_vehicle_card_bottom.setSafeOnClickListener {
             val intent = Intent(it.context, ActivityVehicleDetails::class.java)
