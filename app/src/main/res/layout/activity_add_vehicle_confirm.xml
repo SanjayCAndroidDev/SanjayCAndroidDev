@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_12sdp">
+
+        <View
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/activity_add_vehicle_confirm_img_progress3"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_minus32sdp"
+            android:layout_marginStart="@dimen/_minus9sdp"
+            android:layout_marginEnd="@dimen/_minus9sdp"
+            android:layout_toStartOf="@+id/activity_add_vehicle_confirm_img_progress1"
+            android:layout_toEndOf="@+id/activity_add_vehicle_confirm_img_progress1"
+            android:background="@color/color_dark_blue_green" />
+
+
+        <ImageView
+            android:id="@+id/activity_add_vehicle_confirm_img_progress1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:src="@drawable/bg_seekbar_thumb" />
+
+
+        <TextView
+            android:id="@+id/activity_add_vehicle_confirm_txt_vehicle_details_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_toEndOf="@+id/activity_add_vehicle_confirm_img_progress1"
+            android:text="Vehicle Details"
+            android:textColor="@color/color_dark_blue_green"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/activity_add_vehicle_confirm_txt_vehicle_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/activity_add_vehicle_confirm_txt_vehicle_details_title"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_toEndOf="@+id/activity_add_vehicle_confirm_img_progress1"
+            android:text="Add vehicle info, guest details, kitchen
+details, and amenities"
+            android:textSize="@dimen/_14sdp" />
+
+
+        <TextView
+            android:id="@+id/activity_add_vehicle_confirm_txt_vehicle_details_changes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/activity_add_vehicle_confirm_txt_vehicle_details"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_toEndOf="@+id/activity_add_vehicle_confirm_img_progress1"
+            android:background="@drawable/bg_spinner_add_vehicle_details"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:text="MAKE CHANGES"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
+
+
+        <ImageView
+            android:id="@+id/activity_add_vehicle_confirm_img_progress2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/activity_add_vehicle_confirm_txt_vehicle_details_changes"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:src="@drawable/bg_seekbar_thumb" />
+
+
+        <TextView
+            android:id="@+id/activity_add_vehicle_confirm_txt_listing_desc_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/activity_add_vehicle_confirm_txt_vehicle_details_changes"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_22sdp"
+            android:layout_toEndOf="@+id/activity_add_vehicle_confirm_img_progress2"
+            android:text="Listing Description"
+            android:textColor="@color/color_dark_blue_green"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/activity_add_vehicle_confirm_txt_listing_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/activity_add_vehicle_confirm_txt_listing_desc_title"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_toEndOf="@+id/activity_add_vehicle_confirm_img_progress1"
+            android:text="Add location, listing name, listing description
+and cool photos."
+            android:textSize="@dimen/_14sdp" />
+
+        <TextView
+            android:id="@+id/activity_add_vehicle_confirm_txt_listing_desc_changes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/activity_add_vehicle_confirm_txt_listing_desc"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_toEndOf="@+id/activity_add_vehicle_confirm_img_progress1"
+            android:background="@drawable/bg_spinner_add_vehicle_details"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:text="MAKE CHANGES"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
+
+
+        <ImageView
+            android:id="@+id/activity_add_vehicle_confirm_img_progress3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/activity_add_vehicle_confirm_txt_listing_desc_changes"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:src="@drawable/bg_seekbar_thumb" />
+
+
+        <TextView
+            android:id="@+id/activity_add_vehicle_confirm_txt_pricing_calender_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/activity_add_vehicle_confirm_txt_listing_desc_changes"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_22sdp"
+            android:layout_toEndOf="@+id/activity_add_vehicle_confirm_img_progress2"
+            android:text="Pricing and Calendar"
+            android:textColor="@color/color_dark_blue_green"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/activity_add_vehicle_confirm_txt_pricing_calender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/activity_add_vehicle_confirm_txt_pricing_calender_title"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_toEndOf="@+id/activity_add_vehicle_confirm_img_progress1"
+            android:text="Add nightly rental rate, extra charges, and
+availability."
+            android:textSize="@dimen/_14sdp" />
+
+        <TextView
+            android:id="@+id/activity_add_vehicle_confirm_txt_pricing_calender_changes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/activity_add_vehicle_confirm_txt_pricing_calender"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_toEndOf="@+id/activity_add_vehicle_confirm_img_progress1"
+            android:background="@drawable/bg_spinner_add_vehicle_details"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:text="MAKE CHANGES"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/activity_add_vehicle_confirm_txt_publish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:background="@drawable/btn_add_vehicle"
+            android:drawableEnd="@drawable/ic_arrow_white_next"
+            android:padding="@dimen/_10sdp"
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingEnd="@dimen/_16sdp"
+            android:text="PUBLISH"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+</layout>
